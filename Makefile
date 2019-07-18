@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/07/18 13:42:23 by idunaver         ###   ########.fr        #
+#    Updated: 2019/07/18 14:56:14 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,20 @@ all: checker pushswap
 	
 checker: libft
 	@gcc -c $(SRC_CHECKER) -o $(OBJ_CHECKER) $(HEADER)
-	@gcc $(FLAGS) $(OBJ_CHECKER) -L libft -o $(CHECKER) -g
+	@gcc $(FLAGS) $(OBJ_CHECKER) -L libft/ -lft -o $(CHECKER) -g
 
 pushswap: libft
 	@gcc -c $(SRC_PUSH_SWAP) -o $(OBJ_PUSH_SWAP) $(HEADER)
-	@gcc $(FLAGS) $(OBJ_PUSH_SWAP) -L libft -o $(PUSH_SWAP) -g
+	@gcc $(FLAGS) $(OBJ_PUSH_SWAP) -L libft/ -lft -o $(PUSH_SWAP) -g
 
 libft:
 	@make -C libft/
+
+test:
+	@rm -Rf $(OBJ_CHECKER) $(OBJ_PUSH_SWAP)
+	@rm -Rf $(PUSH_SWAP) $(CHECKER)
+	@gcc -c $(SRC_CHECKER) -o $(OBJ_CHECKER) $(HEADER)
+	@gcc $(FLAGS) $(OBJ_CHECKER) -L libft/ -lft -o $(CHECKER) -g
 
 clean:
 	@make clean -C libft/
