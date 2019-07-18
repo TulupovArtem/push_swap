@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/18 15:52:59 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:29:32 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,32 @@ static t_stack *init_stack(int number)
     return (stack);
 }
 
+static int  different_numbers(char **number, int count)
+{
+    int n[count];
+    char **tmp;
+    int i;
+    int j;
+    int count_tmp;
+    
+    i = 0;
+    j = 0;
+    count_tmp = count;
+    tmp = number;
+    while (*tmp)
+        n[--count] = ft_atoi(*(tmp++));
+    while (i <= count_tmp - 1)
+    {
+        if (j + 1 <= count_tmp && n[i] != n[j + 1])
+            j++;
+        else if (j + 1 <= count_tmp && n[i] == n[j + 1])
+            return (0);
+        else
+            j = ++i;
+    }
+    return (1);
+}
+
 static int  check_number(char **number)
 {
     int i;
@@ -56,22 +82,23 @@ static int  check_number(char **number)
         j = 0;
         i++;
     }
-    return (1);
+    return (different_numbers(number, i));
 }
 
 int main(int ac, char **av)
 {
-    t_stack *stack = NULL;
+    t_stack *stack_a = NULL;
 
     if (ac == 1)
         return (0);
     else
     {
-        if (check_number(av) != 0)
+        if (check_number(++av) == 1)
         {
-            stack = init_stack(ft_atoi(*(av++)));
+            ft_putendl("vse verno, molodec");
+            stack_a = init_stack(ft_atoi(*(av++)));
             while(*(++av))
-                add_num_in_stack(ft_atoi(*av), stack);
+                add_num_in_stack(ft_atoi(*av), stack_a);
         }
         else
             ft_putendl("error");
