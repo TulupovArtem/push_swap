@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/07/18 14:56:14 by idunaver         ###   ########.fr        #
+#    Updated: 2019/07/18 16:04:17 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,11 +37,21 @@ pushswap: libft
 libft:
 	@make -C libft/
 
-test:
+### Rules for tests ###
+
+test_checker:
 	@rm -Rf $(OBJ_CHECKER) $(OBJ_PUSH_SWAP)
 	@rm -Rf $(PUSH_SWAP) $(CHECKER)
 	@gcc -c $(SRC_CHECKER) -o $(OBJ_CHECKER) $(HEADER)
 	@gcc $(FLAGS) $(OBJ_CHECKER) -L libft/ -lft -o $(CHECKER) -g
+
+test_checker_push_swap:
+	@rm -Rf $(OBJ_CHECKER) $(OBJ_PUSH_SWAP)
+	@rm -Rf $(PUSH_SWAP) $(CHECKER)
+	@gcc -c $(SRC_CHECKER) -o $(OBJ_CHECKER) $(HEADER)
+	@gcc $(FLAGS) $(OBJ_CHECKER) -L libft/ -lft -o $(CHECKER) -g
+
+#######################
 
 clean:
 	@make clean -C libft/
