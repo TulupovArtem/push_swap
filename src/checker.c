@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/18 17:29:32 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:52:42 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 static void add_num_in_stack(int number, t_stack *stack)
 {
     t_stack *tmp;
+    // t_stack *prev;
 
     tmp = stack;
     while (tmp->next)
         tmp = tmp->next;
     if(!(tmp->next = (t_stack *)malloc(sizeof(t_stack))))
         return ;
+    // prev = tmp;
     tmp->next->number = number;
     tmp->next->next = NULL;
+    tmp->next->previous = tmp;
 }
 
 static t_stack *init_stack(int number)
@@ -33,6 +36,7 @@ static t_stack *init_stack(int number)
         return (NULL);
     stack->number = number;
     stack->next = NULL;
+    stack->previous = NULL;
     return (stack);
 }
 
