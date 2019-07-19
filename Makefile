@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/07/19 18:41:36 by idunaver         ###   ########.fr        #
+#    Updated: 2019/07/19 19:49:38 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC_CHECKER = src/checker.c src/work_with_stack.c
 OBJ_CHECKER = $(SRC_CHECKER:%.c=%.o)
 
 PUSH_SWAP = push_swap
-SRC_PUSH_SWAP = src/push_swap.c
+SRC_PUSH_SWAP = src/push_swap.c src/work_with_stack.c
 OBJ_PUSH_SWAP = $(SRC_PUSH_SWAP:%.c=%.o)
 
 HEADER = -I include -I libft/include
