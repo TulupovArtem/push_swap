@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
+#    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/07/18 16:04:17 by idunaver         ###   ########.fr        #
+#    Updated: 2019/07/19 18:41:36 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CHECKER = checker
-SRC_CHECKER = src/checker.c
+SRC_CHECKER = src/checker.c src/work_with_stack.c
 OBJ_CHECKER = $(SRC_CHECKER:%.c=%.o)
 
 PUSH_SWAP = push_swap
