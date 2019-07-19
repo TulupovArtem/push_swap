@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 18:39:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/19 18:47:30 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/19 19:56:34 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		del_first_elem_in_stack(t_stack *stack)
 	del->previous->next = head;
 	head->previous = del->previous;
 	del->number = 0;
-	del = free;
+	free(del);
 }
 
 void		add_num_in_stack(int number, t_stack *stack)

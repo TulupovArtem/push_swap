@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/19 18:39:28 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/19 19:54:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ static int		check_number(char **number)
 int				main(int ac, char **av)
 {
 	t_stack	*stack_a;
+	t_stack *stack_b;
 
+	stack_b = NULL;
 	stack_a = NULL;
 	if (ac == 1)
 		return (0);
