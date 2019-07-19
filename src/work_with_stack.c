@@ -6,11 +6,30 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 18:39:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/19 19:56:34 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/19 20:09:03 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void		free_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	t_stack	*tmp;
+
+	tmp = NULL;
+	while (stack_a)
+	{
+		tmp = stack_a->next;
+		free(stack_a);
+		stack_a = tmp;
+	}
+	while (stack_b)
+	{
+		tmp = stack_b->next;
+		free(stack_b);
+		stack_b = tmp;
+	}
+}
 
 void		del_first_elem_in_stack(t_stack *stack)
 {
@@ -21,7 +40,6 @@ void		del_first_elem_in_stack(t_stack *stack)
 	head->previous = del;
 	del->previous->next = head;
 	head->previous = del->previous;
-	del->number = 0;
 	free(del);
 }
 
