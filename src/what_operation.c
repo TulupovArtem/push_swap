@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:06:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 17:16:34 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 17:33:36 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			what_push(char **line, t_stack *stack_a, t_stack *stack_b)
 		return ;
 }
 
-void			what_rotate(char **line, t_stack *stack_a, t_stack *stack_b)
+void			what_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (**line == 'a')
 		rotate(stack_a);

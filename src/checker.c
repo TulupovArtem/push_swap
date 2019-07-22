@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 17:13:11 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 17:34:34 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static void			input(t_stack *stack_a, t_stack *stack_b)
 			if (*(++line) == 'r')
 				what_reverse_rotate(&line, stack_a, stack_b);
 			else
-				what_rotate(&line, stack_a, stack_b);
+				what_rotate(&line, &stack_a, &stack_b);
 		}
 		else
 		{
