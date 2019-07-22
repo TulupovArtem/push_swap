@@ -6,11 +6,31 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 14:46:50 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 16:38:00 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	t_stack *tmp;
+
+	tmp = stack_a;
+	if (stack_b)
+		return ;
+	while (tmp->next->number != stack_a->number)
+	{
+		if (tmp->next->number != stack_a->number && tmp->number < tmp->next->number)
+			tmp = tmp->next;
+		else
+		{
+			ft_putendl("huy");
+			return ;
+		}
+	}
+	ft_putendl("ok");
+}
 
 static int		different_numbers(char **number, int count)
 {
@@ -61,6 +81,32 @@ static int		check_number(char **number)
 	return (different_numbers(number, i));
 }
 
+static void			input(t_stack *stack_a, t_stack *stack_b)
+{
+	char *line;
+
+	while (get_next_line(0, &line) > 0)
+	{
+		if (*(line++) == 's')
+			what_swap(&line, stack_a, stack_b);
+		else if (*(line++) == 'p')
+			what_push(&line, stack_a, stack_b);
+		else if (*(line++) == 'r')
+		{
+			if (*(++line) == 'r')
+				what_reverse_rotate(&line, stack_a, stack_b);
+			else
+				what_rotate(&line, stack_a, stack_b);
+		}
+		else
+		{
+			sort_or_not_sort(stack_a, stack_b);
+			return ;
+		}
+	}
+	sort_or_not_sort(stack_a, stack_b);
+}
+
 int				main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -74,9 +120,11 @@ int				main(int ac, char **av)
 	{
 		if (check_number(++av) == 1)
 		{
+			ac--;
 			stack_a = init_stack(ft_atoi(*av));
-			while (ac != 2 && *(++av))
+			while (--ac != -1 && *(++av))
 				add_num_in_stack(ft_atoi(*av), stack_a);
+			input(stack_a, stack_b);
 		}
 		else
 			ft_putendl("error");
