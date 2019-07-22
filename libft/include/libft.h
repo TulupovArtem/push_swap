@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 19:22:33 by idunaver          #+#    #+#             */
-/*   Updated: 2018/12/20 16:57:32 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 15:02:52 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <errno.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {
