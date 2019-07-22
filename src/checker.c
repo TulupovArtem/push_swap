@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/19 19:54:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 14:46:50 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int				main(int ac, char **av)
 	{
 		if (check_number(++av) == 1)
 		{
-			ft_putendl("vse verno, molodec");
 			stack_a = init_stack(ft_atoi(*av));
 			while (ac != 2 && *(++av))
 				add_num_in_stack(ft_atoi(*av), stack_a);
