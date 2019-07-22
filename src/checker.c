@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 16:38:00 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/22 17:13:11 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 			tmp = tmp->next;
 		else
 		{
-			ft_putendl("huy");
+			ft_putendl("pipka");
 			return ;
 		}
 	}
