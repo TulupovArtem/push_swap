@@ -6,13 +6,13 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:06:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 17:33:36 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/23 10:24:41 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void			what_swap(char **line, t_stack *stack_a, t_stack *stack_b)
+void			what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (**line == 'a')
 		swap(stack_a);
@@ -27,7 +27,7 @@ void			what_swap(char **line, t_stack *stack_a, t_stack *stack_b)
 		return ;
 }
 
-void			what_push(char **line, t_stack *stack_a, t_stack *stack_b)
+void			what_push(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (**line == 'a')
 		push_a(stack_a, stack_b);
@@ -52,7 +52,7 @@ void			what_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 		return ;
 }
 
-void			what_reverse_rotate(char **line, t_stack *stack_a, t_stack *stack_b)
+void			what_reverse_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (**line == 'a')
 		reverse_rotate(stack_a);

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/22 17:34:34 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/23 10:27:35 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 			tmp = tmp->next;
 		else
 		{
-			ft_putendl("pipka");
+			ft_putendl("unsorted");
 			return ;
 		}
 	}
-	ft_putendl("ok");
+	ft_putendl("sorted");
 }
 
 static int		different_numbers(char **number, int count)
@@ -88,13 +88,13 @@ static void			input(t_stack *stack_a, t_stack *stack_b)
 	while (get_next_line(0, &line) > 0)
 	{
 		if (*(line++) == 's')
-			what_swap(&line, stack_a, stack_b);
+			what_swap(&line, &stack_a, &stack_b);
 		else if (*(line++) == 'p')
-			what_push(&line, stack_a, stack_b);
+			what_push(&line, &stack_a, &stack_b);
 		else if (*(line++) == 'r')
 		{
 			if (*(++line) == 'r')
-				what_reverse_rotate(&line, stack_a, stack_b);
+				what_reverse_rotate(&line, &stack_a, &stack_b);
 			else
 				what_rotate(&line, &stack_a, &stack_b);
 		}
@@ -127,7 +127,7 @@ int				main(int ac, char **av)
 			input(stack_a, stack_b);
 		}
 		else
-			ft_putendl("error");
+			ft_putendl("error: invalid input");
 	}
 	return (0);
 }
