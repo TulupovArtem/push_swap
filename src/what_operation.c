@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:06:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/23 10:24:41 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/23 11:28:11 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void			what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
 {
+	*line = *line + 1;
 	if (**line == 'a')
 		swap(stack_a);
 	else if (**line == 'b')
@@ -29,6 +30,7 @@ void			what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
 
 void			what_push(char **line, t_stack **stack_a, t_stack **stack_b)
 {
+	*line = *line + 1;
 	if (**line == 'a')
 		push_a(stack_a, stack_b);
 	else if (**line == 'b')
@@ -54,6 +56,7 @@ void			what_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 
 void			what_reverse_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 {
+	*line = *line + 1;
 	if (**line == 'a')
 		reverse_rotate(stack_a);
 	else if (**line == 'b')

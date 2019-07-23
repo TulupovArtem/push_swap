@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/23 10:27:35 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/23 11:41:31 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	while (tmp->next->number != stack_a->number)
 	{
-		if (tmp->next->number != stack_a->number && tmp->number < tmp->next->number)
+		if (tmp->number < tmp->next->number)
 			tmp = tmp->next;
 		else
 		{
@@ -44,13 +44,13 @@ static int		different_numbers(char **number, int count)
 	j = 0;
 	count_tmp = count;
 	tmp = number;
-	while (*tmp)
+	while (count)
 		n[--count] = ft_atoi(*(tmp++));
-	while (i <= count_tmp - 1)
+	while (i < count_tmp)
 	{
-		if (j + 1 <= count_tmp && n[i] != n[j + 1])
+		if (j + 1 < count_tmp && n[i] != n[j + 1])
 			j++;
-		else if (j + 1 <= count_tmp && n[i] == n[j + 1])
+		else if (j + 1 < count_tmp && n[i] == n[j + 1])
 			return (0);
 		else
 			j = ++i;
@@ -58,20 +58,20 @@ static int		different_numbers(char **number, int count)
 	return (1);
 }
 
-static int		check_number(char **number)
+static int		check_number(char **number, int ac)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (number[i])
+	while (i < ac - 1)
 	{
 		if (ft_atoi(number[i]) < 0)
 			j++;
 		while (number[i][j])
 		{
-			if (!(number[i][j] >= 48 && number[i][j] <= 57))
+			if (!(number[i][j] >= '0' && number[i][j] <= '9'))
 				return (0);
 			j++;
 		}
@@ -87,13 +87,13 @@ static void			input(t_stack *stack_a, t_stack *stack_b)
 
 	while (get_next_line(0, &line) > 0)
 	{
-		if (*(line++) == 's')
+		if (*line == 's')
 			what_swap(&line, &stack_a, &stack_b);
-		else if (*(line++) == 'p')
+		else if (*line == 'p')
 			what_push(&line, &stack_a, &stack_b);
 		else if (*(line++) == 'r')
 		{
-			if (*(++line) == 'r')
+			if (*(line) == 'r')
 				what_reverse_rotate(&line, &stack_a, &stack_b);
 			else
 				what_rotate(&line, &stack_a, &stack_b);
@@ -118,7 +118,7 @@ int				main(int ac, char **av)
 		return (0);
 	else
 	{
-		if (check_number(++av) == 1)
+		if (check_number(++av, ac) == 1)
 		{
 			ac--;
 			stack_a = init_stack(ft_atoi(*av));
