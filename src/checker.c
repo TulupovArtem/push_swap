@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/31 17:01:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/31 18:48:14 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 			tmp = tmp->next;
 		else
 		{
-			ft_putendl("unsorted");
+			ft_putendl("KO");
 			return ;
 		}
 	}
-	ft_putendl("sorted");
+	ft_putendl("OK");
 }
 
 static int		different_numbers(char **number, int count)
@@ -124,10 +124,10 @@ int				main(int ac, char **av)
 			stack_a = init_stack(ft_atoi(*av));
 			while (--ac != -1 && *(++av))
 				add_num_in_stack(ft_atoi(*av), stack_a);
-			input(stack_a, stack_b);
+			input(stack_a->previous, stack_b);
 		}
 		else
-			ft_putendl("error: invalid input");
+			ft_putendl("Error");
 	}
 	return (0);
 }

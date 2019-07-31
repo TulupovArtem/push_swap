@@ -6,13 +6,33 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:02:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/31 17:03:13 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/31 18:01:54 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+
 int		main(int ac, char **av)
 {
+	t_stack	*stack_a;
+	t_stack *stack_b;
+
+	stack_b = NULL;
+	stack_a = NULL;
+	if (ac == 1)
+		return (0);
+	else
+	{
+		if (check_number(++av, ac) == 1)
+		{
+			ac--;
+			stack_a = init_stack(ft_atoi(*av));
+			while (--ac != -1 && *(++av))
+				add_num_in_stack(ft_atoi(*av), stack_a);
+		}
+		else
+			ft_putendl("Error");
 	return (0);
 }
