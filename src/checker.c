@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/23 11:44:58 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/31 17:01:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// проверка на то, отсортирован ли в итоге массив
 static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = stack_a;
 	if (stack_b)
@@ -33,7 +32,6 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 	ft_putendl("sorted");
 }
 
-// проверка аргументов на разные числа (разные числа нельзя)
 static int		different_numbers(char **number, int count)
 {
 	int		n[count];
@@ -60,7 +58,6 @@ static int		different_numbers(char **number, int count)
 	return (1);
 }
 
-// проверка на то, числа ли аргументы. Переходит в проверку на разные числа.
 static int		check_number(char **number, int ac)
 {
 	int	i;
@@ -84,10 +81,9 @@ static int		check_number(char **number, int ac)
 	return (different_numbers(number, i));
 }
 
-// парс флагов
-static void			input(t_stack *stack_a, t_stack *stack_b)
+static void		input(t_stack *stack_a, t_stack *stack_b)
 {
-	char *line;
+	char	*line;
 
 	while (get_next_line(0, &line) > 0)
 	{
