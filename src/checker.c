@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/31 18:48:14 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/07/31 19:00:49 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 	tmp = stack_a;
 	if (stack_b)
 		return ;
-	while (tmp->next->number != stack_a->number)
+	while (tmp->previous->number != stack_a->number)
 	{
-		if (tmp->number < tmp->next->number)
+		if (tmp->number < tmp->previous->number)
 			tmp = tmp->next;
 		else
 		{
