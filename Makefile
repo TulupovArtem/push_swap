@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/07/22 16:29:10 by idunaver         ###   ########.fr        #
+#    Updated: 2019/08/02 16:33:27 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ FLAGS = -Wall -Wextra -Werror -g
 CHECKER = checker
 SRC_CHECKER_NAME = checker.c \
 				work_with_stack.c \
+				check_number.c \
 				push.c \
 				swap.c \
 				rotate.c \
@@ -33,7 +34,12 @@ OBJ_CHECKER = $(addprefix $(OBJDIR)/, $(OBJ_CHECKER_NAME))
 
 PUSH_SWAP = push_swap
 SRC_PUSH_SWAP_NAME = push_swap.c \
-				work_with_stack.c
+				work_with_stack.c \
+				check_number.c \
+				push.c \
+				swap.c \
+				rotate.c \
+				reverse_rotate.c
 OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
 OBJ_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(OBJ_PUSH_SWAP_NAME))
@@ -61,6 +67,8 @@ fclean: clean
 	@rm -Rf $(CHECKER) $(PUSH_SWAP)
 
 re_checker: fclean checker
+
+re_push_swap: fclean push_swap
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/23 10:32:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/02 16:20:57 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ typedef struct		s_stack
 	struct s_stack	*next;
 	struct s_stack	*previous;
 }					t_stack;
+
+/* check_number.c */
+int					check_number(char **number, int ac);
 
 /* work_with_stack.c */
 void				free_stacks(t_stack *stack_a, t_stack *stack_b);
