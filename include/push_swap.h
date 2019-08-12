@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/02 16:20:57 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/12 19:23:00 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int					check_number(char **number, int ac);
 
 /* work_with_stack.c */
 void				free_stacks(t_stack *stack_a, t_stack *stack_b);
-void				del_first_elem_in_stack(t_stack *stack);
+void				del_first_elem_in_stack(t_stack **stack);
 void				add_num_in_stack(int number, t_stack *stack);
 t_stack				*init_stack(int number);
 
@@ -44,6 +44,7 @@ void				swap(t_stack **stack);
 /* push.c */
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
+// void				push_num_in_stack(int number, t_stack **stack);
 
 /* rotate.c */
 void				rotate(t_stack **stack);

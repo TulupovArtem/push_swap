@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:02:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/02 16:40:40 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/12 19:24:26 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,64 @@
 
 int min_num_in_a(t_stack *stack_a)
 {
-	if (stack_a->number < stack_a->next->number && stack_a->number > stack_a->previous->number)
-		return (stack_a->previous->number);
-	else if (stack_a->number < stack_a->previous->number && stack_a->number > stack_a->next->number)
-		return (stack_a->next->number);
-	return (stack_a->number);
+	t_stack *head;
+	t_stack *tmp;
+	int min;
+
+	tmp = stack_a;
+	head = stack_a;
+	min = head->number;
+	while (tmp->next->number != head->number)
+	{
+		if (tmp->next->number < min)
+			min = tmp->next->number;
+		tmp = tmp->next;
+	}
+	return (min);
 }
 
 int max_num_in_a(t_stack *stack_a)
 {
-	if (stack_a->number < stack_a->next->number && stack_a->number > stack_a->previous->number)
-		return (stack_a->next->number);
-	else if (stack_a->number < stack_a->previous->number && stack_a->number > stack_a->next->number)
-		return (stack_a->previous->number);
-	return (stack_a->number);
+	t_stack *head;
+	t_stack *tmp;
+	int max;
+
+	tmp = stack_a;
+	head = stack_a;
+	max = head->number;
+	while (tmp->next->number != head->number)
+	{
+		if (tmp->next->number > max)
+			max = tmp->next->number;
+		tmp = tmp->next;
+	}
+	return (max);
 }
 
-void	sort_stack_a(t_stack **stack_a, int arg)
+void	sort_stack_a(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	int min;
 	int max;
-
+	
 	min = min_num_in_a(*stack_a);
 	max = max_num_in_a(*stack_a);
-	printf("stack_a->number: %d\n", (*stack_a)->number);
-	printf("max: %d;\nmin: %d;\narg: %d\n", max, min, arg);
+	printf("head1: %d\n", (*stack_a)->number);
+	printf("end1: %d\n", (*stack_a)->next->number);
+	if (arg <= 3)
+	{
+		if ((*stack_a)->number == min && (*stack_a)->next->number == max)
+		{
+			printf("ok");
+			return ;
+		}
+		if ((*stack_a)->number == max)
+		{
+			push_b(stack_a, stack_b);
+			push_b(stack_a, stack_b);
+		}
+	}
+	printf("head2: %d\n", (*stack_a)->number);
+	printf("end2: %d\n", (*stack_a)->next->number);
 	return ;
 }
 
@@ -46,7 +79,7 @@ void	sort_numbers(t_stack *stack_a, t_stack *stack_b, int arg)
 {
 	stack_b = NULL;
 	if (arg <= 3)
-		sort_stack_a(&stack_a, arg);
+		sort_stack_a(&stack_a, &stack_b, arg);
 	return ;
 }
 

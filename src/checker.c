@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/02 16:21:30 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/12 19:36:47 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 	while (tmp->previous->number != stack_a->number)
 	{
 		if (tmp->number < tmp->previous->number)
-			tmp = tmp->next;
+			tmp = tmp->previous;
 		else
 		{
 			ft_putendl("KO");
@@ -34,27 +34,32 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 
 static void		input(t_stack *stack_a, t_stack *stack_b)
 {
-	char	*line;
+	// char	*line;
 
-	while (get_next_line(0, &line) > 0)
-	{
-		if (*line == 's')
-			what_swap(&line, &stack_a, &stack_b);
-		else if (*line == 'p')
-			what_push(&line, &stack_a, &stack_b);
-		else if (*(line++) == 'r')
-		{
-			if (*(line) == 'r')
-				what_reverse_rotate(&line, &stack_a, &stack_b);
-			else
-				what_rotate(&line, &stack_a, &stack_b);
-		}
-		else
-		{
-			sort_or_not_sort(stack_a, stack_b);
-			return ;
-		}
-	}
+	// while (get_next_line(0, &line) > 0)
+	// {
+	// 	if (*line == 's')
+	// 		what_swap(&line, &stack_a, &stack_b);
+	// 	else if (*line == 'p')
+	// 		what_push(&line, &stack_a, &stack_b);
+	// 	else if (*(line++) == 'r')
+	// 	{
+	// 		if (*(line) == 'r')
+	// 			what_reverse_rotate(&line, &stack_a, &stack_b);
+	// 		else
+	// 			what_rotate(&line, &stack_a, &stack_b);
+	// 	}
+	// 	else
+	// 	{
+	// 		sort_or_not_sort(stack_a, stack_b);
+	// 		return ;
+	// 	}
+	// }
+	reverse_rotate(&stack_a);
+	push_b(&stack_a, &stack_b);
+	swap(&stack_a);
+	reverse_rotate(&stack_a);
+	push_a(&stack_a, &stack_b);
 	sort_or_not_sort(stack_a, stack_b);
 }
 
