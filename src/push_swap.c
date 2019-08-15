@@ -6,17 +6,17 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:02:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/12 19:24:26 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 16:04:26 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int min_num_in_a(t_stack *stack_a)
+int		min_num_in_a(t_stack *stack_a)
 {
-	t_stack *head;
-	t_stack *tmp;
-	int min;
+	t_stack	*head;
+	t_stack	*tmp;
+	int		min;
 
 	tmp = stack_a;
 	head = stack_a;
@@ -30,11 +30,11 @@ int min_num_in_a(t_stack *stack_a)
 	return (min);
 }
 
-int max_num_in_a(t_stack *stack_a)
+int		max_num_in_a(t_stack *stack_a)
 {
-	t_stack *head;
-	t_stack *tmp;
-	int max;
+	t_stack	*head;
+	t_stack	*tmp;
+	int		max;
 
 	tmp = stack_a;
 	head = stack_a;
@@ -52,7 +52,7 @@ void	sort_stack_a(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	int min;
 	int max;
-	
+
 	min = min_num_in_a(*stack_a);
 	max = max_num_in_a(*stack_a);
 	printf("head1: %d\n", (*stack_a)->number);
@@ -87,7 +87,7 @@ int		main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
-	int 	arg;
+	int		arg;
 
 	arg = ac - 1;
 	stack_b = NULL;

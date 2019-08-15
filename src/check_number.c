@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/02 16:21:47 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 16:05:12 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int		different_numbers(char **number, int count)
+static int	different_numbers(char **number, int count)
 {
 	int		n[count];
 	char	**tmp;
@@ -38,10 +38,10 @@ static int		different_numbers(char **number, int count)
 	return (1);
 }
 
-int		check_number(char **number, int ac)
+int			check_number(char **number, int ac)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
