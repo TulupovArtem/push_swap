@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:06:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/07/31 17:04:53 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 16:48:57 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@ void			what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	*line = *line + 1;
 	if (**line == 'a')
-		swap(stack_a);
+		swap(stack_a, 0);
 	else if (**line == 'b')
-		swap(stack_b);
+		swap(stack_b, 0);
 	else if (**line == 's')
-	{
-		swap(stack_a);
-		swap(stack_b);
-	}
+		double_swap(stack_a, stack_b, 0);
 	else
 		return ;
 }
@@ -32,9 +29,9 @@ void			what_push(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	*line = *line + 1;
 	if (**line == 'a')
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, 0);
 	else if (**line == 'b')
-		push_b(stack_a, stack_b);
+		push_b(stack_a, stack_b, 0);
 	else
 		return ;
 }
@@ -42,14 +39,11 @@ void			what_push(char **line, t_stack **stack_a, t_stack **stack_b)
 void			what_rotate(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (**line == 'a')
-		rotate(stack_a);
+		rotate(stack_a, 0);
 	else if (**line == 'b')
-		rotate(stack_b);
+		rotate(stack_b, 0);
 	else if (**line == 'r')
-	{
-		rotate(stack_a);
-		rotate(stack_b);
-	}
+		double_rotate(stack_a, stack_b, 0);
 	else
 		return ;
 }
@@ -59,14 +53,11 @@ t_stack **stack_a, t_stack **stack_b)
 {
 	*line = *line + 1;
 	if (**line == 'a')
-		reverse_rotate(stack_a);
+		reverse_rotate(stack_a, 0);
 	else if (**line == 'b')
-		reverse_rotate(stack_b);
+		reverse_rotate(stack_b, 0);
 	else if (**line == 'r')
-	{
-		reverse_rotate(stack_a);
-		reverse_rotate(stack_b);
-	}
+		double_reverse_rotate(stack_a, stack_b, 0);
 	else
 		return ;
 }

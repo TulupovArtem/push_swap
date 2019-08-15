@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 16:06:55 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 17:53:08 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,23 @@ void				what_push(char **line, t_stack **stack_a, t_stack **stack_b);
 void				what_swap(char **line, t_stack **stack_a, t_stack **stack_b);
 
 /* swap.c */
-void				swap(t_stack **stack);
+void				swap(t_stack **stack, int print);
+void				double_swap(t_stack **stack_a, t_stack **stack_b, int print);
 
 /* push.c */
-void				push_a(t_stack **stack_a, t_stack **stack_b);
-void				push_b(t_stack **stack_a, t_stack **stack_b);
+void				push_a(t_stack **stack_a, t_stack **stack_b, int print);
+void				push_b(t_stack **stack_a, t_stack **stack_b, int print);
 
 /* rotate.c */
-void				rotate(t_stack **stack);
+void				rotate(t_stack **stack, int print);
+void				double_rotate(t_stack **stack_a, t_stack **stack_b, int print);
 
 /* reverse_rotate.c */
-void				reverse_rotate(t_stack **stack);
+void				reverse_rotate(t_stack **stack, int print);
+void				double_reverse_rotate(t_stack **stack_a, t_stack **stack_b, int print);
+
+/* max_min.c */
+int					min_num_in_stack(t_stack *stack_a);
+int					max_num_in_stack(t_stack *stack_a);
 
 #endif

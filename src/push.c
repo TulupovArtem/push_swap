@@ -6,13 +6,13 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 16:08:48 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/12 21:23:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 16:33:19 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_stack **stack_a, t_stack **stack_b)
+void	push_a(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	if (!*stack_b)
 		return ;
@@ -24,12 +24,14 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		add_num_in_stack((*stack_b)->number, *stack_a);
-		swap(stack_a);
+		swap(stack_a, 0);
 		del_first_elem_in_stack(stack_b);
 	}
+	if (print == 1)
+		ft_putendl("pa");
 }
 
-void	push_b(t_stack **stack_a, t_stack **stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b, int print)
 {
 	if (!*stack_a)
 		return ;
@@ -41,7 +43,9 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		add_num_in_stack((*stack_a)->number, *stack_b);
-		swap(stack_b);
+		swap(stack_b, 0);
 		del_first_elem_in_stack(stack_a);
 	}
+	if (print == 1)
+		ft_putendl("pb");
 }
