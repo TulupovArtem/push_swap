@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/12 19:23:00 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/15 16:06:55 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void				swap(t_stack **stack);
 /* push.c */
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
-// void				push_num_in_stack(int number, t_stack **stack);
 
 /* rotate.c */
 void				rotate(t_stack **stack);
