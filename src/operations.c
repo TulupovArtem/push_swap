@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:11:34 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 20:30:42 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 20:39:12 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		fill_list_opt(t_stack *stack_b, t_stack *stack_a,
 int count_num, t_count_op *oper)
 {
 	int	operations;
-	
+
 	operations = 0;
 	while ((count_num / 2) != operations)
 	{

@@ -6,13 +6,13 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:15:17 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 20:20:13 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 20:39:38 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_count_op  *init_list_op(int number, int op_a, int op_b)
+t_count_op	*init_list_op(int number, int op_a, int op_b)
 {
 	t_count_op	*oper;
 
@@ -27,7 +27,8 @@ t_count_op  *init_list_op(int number, int op_a, int op_b)
 	return (oper);
 }
 
-void  add_elem_in_list_op(int number, int op_a, int op_b, t_count_op *oper)
+void		add_elem_in_list_op(int number, int op_a,
+int op_b, t_count_op *oper)
 {
 	t_count_op *new_elem;
 
@@ -42,7 +43,7 @@ void  add_elem_in_list_op(int number, int op_a, int op_b, t_count_op *oper)
 	new_elem->next = NULL;
 }
 
-void free_list_op(t_count_op *oper)
+void		free_list_op(t_count_op *oper)
 {
 	t_count_op	*tmp;
 
