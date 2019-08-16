@@ -6,43 +6,13 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:02:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 18:06:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 17:21:47 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_stack_a(t_stack **stack_a, int arg)
-{
-	int min;
-	int max;
-
-	min = min_num_in_stack(*stack_a);
-	max = max_num_in_stack(*stack_a);
-	if (arg <= 3)
-	{
-		while ((*stack_a)->number != max || (*stack_a)->next->number != min)
-		{
-			if ((*stack_a)->number == min)
-				rotate(stack_a, 1);
-			else if ((*stack_a)->previous->number == min)
-				reverse_rotate(stack_a, 1);
-			else if ((*stack_a)->number != min && (*stack_a)->number != max)
-				swap(stack_a, 1);
-		}
-	}
-	return ;
-}
-
-void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
-{
-	int numbers_push;
-
-	numbers_push = arg - 3;
-	while ()
-}
-
-void	sort_numbers(t_stack *stack_a, t_stack *stack_b, int arg)
+static void	sort_numbers(t_stack *stack_a, t_stack *stack_b, int arg)
 {
 	stack_b = NULL;
 	if (arg == 1)

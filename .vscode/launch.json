@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Users/idunaver/Desktop/push_swap/push_swap",
-            "args": [3 2 1],
+            "args": [1 2 3 4],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 17:53:08 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 17:22:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ void				double_reverse_rotate(t_stack **stack_a, t_stack **stack_b, int print);
 /* max_min.c */
 int					min_num_in_stack(t_stack *stack_a);
 int					max_num_in_stack(t_stack *stack_a);
+
+/* algorythm.c */
+void				plan_drum(t_stack **stack_a, t_stack **stack_b, int arg);
+void				sort_stack_a(t_stack **stack_a, int arg);
 
 #endif
