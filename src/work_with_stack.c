@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 18:39:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 15:39:47 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 19:58:46 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ void		free_stacks(t_stack *stack_a, t_stack *stack_b)
 	{
 		tmp = stack_a->next;
 		free(stack_a);
+		stack_a = NULL;
 		stack_a = tmp;
 	}
 	while (stack_b)
 	{
 		tmp = stack_b->next;
 		free(stack_b);
+		stack_b = NULL;
 		stack_b = tmp;
 	}
 }

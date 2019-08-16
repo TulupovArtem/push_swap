@@ -6,11 +6,19 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 17:26:49 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 20:09:42 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
+{
+	t_count_op	*oper;
+
+	oper = total_operations(*stack_a, *stack_b, arg);
+	puts("\nPoka vse ok\n");
+}
 
 void	sort_stack_a(t_stack **stack_a, int arg)
 {
@@ -42,4 +50,7 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 	while (numbers_push--)
 		push_b(stack_a, stack_b, 1);
 	sort_stack_a(stack_a, 3);
+	numbers_push = arg - 3;
+	// while (numbers_push--)
+		moving_numbers(stack_a, stack_b, arg);
 }
