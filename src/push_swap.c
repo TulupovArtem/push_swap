@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:02:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 17:21:47 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/16 17:27:42 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	sort_numbers(t_stack *stack_a, t_stack *stack_b, int arg)
 {
-	stack_b = NULL;
 	if (arg == 1)
 		return ;
 	if (arg <= 3)
@@ -24,7 +23,7 @@ static void	sort_numbers(t_stack *stack_a, t_stack *stack_b, int arg)
 	return ;
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
