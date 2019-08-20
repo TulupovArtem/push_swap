@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/20 14:44:43 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/20 15:43:11 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void				moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg);
 t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg);
 int 				counting_operations_in_a(t_stack *stack_a, int number);
 void				fill_list_opt(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op *oper);
+int					len_a(t_stack *stack_a);
+int					count_a(int number, t_stack *stack_a, int max, int min);
 
 /* work_with_list_op.c */
 t_count_op  		*init_list_op(int number, int op_a, int op_b);
