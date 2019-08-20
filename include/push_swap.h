@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 20:29:33 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/20 14:44:43 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct			s_count_op
 	int					op_b;
 	int					sum_oper;
 	int					number;
+	int					rev_rot_b;
+	int					rev_rot_a;
 	struct s_count_op	*next;
 	struct s_count_op	*previous;
 }						t_count_op;

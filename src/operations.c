@@ -6,17 +6,58 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:11:34 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 20:39:12 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/20 15:21:32 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int			len_a(t_stack *stack_a)
+{
+	t_stack *head;
+	int len;
+
+	len = 1;
+	head = stack_a;
+	while (stack_a->previous->number != head->number)
+	{
+		stack_a = stack_a->previous;
+		len++;
+	}
+	return (len);
+}
+
 int			counting_operations_in_a(t_stack *stack_a, int number)
 {
-	stack_a = NULL;
-	number = 0;
-	return (0);
+	int min;
+	int max;
+	int count;
+	int len;
+
+	count = 0;
+	min = min_num_in_stack(stack_a);
+	max = max_num_in_stack(stack_a);
+	len = len_a(stack_a);
+	if (max < number && stack_a->number == max)
+		count = 0;
+	else if (min > number && stack_a->next->number == min)
+		count = 0;
+	else
+	{
+		if (number > max && stack_a->number == min)
+			count++;
+		if (number < max && number > min)
+		{
+			while (number < stack_a->number)
+			{
+				stack_a = stack_a->previous;
+				count++;
+			}
+			if (count > len / 2)
+				count = len - count;
+		}
+	}
+	return (count);
 }
 
 void		fill_list_opt(t_stack *stack_b, t_stack *stack_a,
@@ -43,7 +84,8 @@ int count_num, t_count_op *oper)
 	{
 		stack_b = stack_b->previous;
 		add_elem_in_list_op(stack_b->number,
-		counting_operations_in_a(stack_a, stack_b->number), operations--, oper);
+		counting_operations_in_a(stack_a, stack_b->number), --operations, oper);
+		oper->rev_rot_b = 1;
 		oper = oper->next;
 	}
 }
