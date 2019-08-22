@@ -6,13 +6,14 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/22 16:56:32 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/22 16:58:19 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number)
+void	back_to_the_a(t_stack **stack_a, t_stack **stack_b,
+t_count_op *oper, int number)
 {
 	t_count_op *tmp;
 
@@ -39,8 +40,8 @@ void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	t_count_op	*oper;
 	t_count_op	*tmp;
-	int number;
-	int min_op;
+	int			number;
+	int			min_op;
 
 	oper = total_operations(*stack_a, *stack_b, arg);
 	tmp = oper;
