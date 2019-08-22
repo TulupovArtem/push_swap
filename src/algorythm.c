@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/22 16:58:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/22 18:00:45 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,31 @@ void	sort_stack_a(t_stack **stack_a, int arg)
 	return ;
 }
 
+void	final_rotate(t_stack **stack_a)
+{
+	int		count;
+	int		rev_count;
+	t_stack	*tmp;
+
+	count = 0;
+	rev_count = 0;
+	tmp = *stack_a;
+	while (tmp->number != max_num_in_stack(*stack_a))
+	{
+		count++;
+		tmp = tmp->next;
+	}
+	if (count > (len_a(*stack_a) / 2))
+	{
+		rev_count = len_a(*stack_a) - count;
+		count = 0;
+	}
+	while (rev_count-- != 0)
+		rotate(stack_a, 1);
+	while (count-- != 0)
+		reverse_rotate(stack_a, 1);
+}
+
 void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	int numbers_push;
@@ -92,4 +117,5 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 	numbers_push = arg - 3;
 	while (numbers_push-- != 0)
 		moving_numbers(stack_a, stack_b, arg);
+	final_rotate(stack_a);
 }
