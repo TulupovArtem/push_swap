@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/20 15:43:11 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/22 14:25:49 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int					max_num_in_stack(t_stack *stack_a);
 void				plan_drum(t_stack **stack_a, t_stack **stack_b, int arg);
 void				sort_stack_a(t_stack **stack_a, int arg);
 void				moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg);
+void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
 
 /* operations.c */
 t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg);

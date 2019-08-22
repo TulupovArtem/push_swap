@@ -6,18 +6,56 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/20 13:35:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/22 16:56:32 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number)
+{
+	t_count_op *tmp;
+
+	tmp = oper;
+	while (number != tmp->number)
+		tmp = tmp->next;
+	if (tmp->rev_rot_b == 1)
+		while (tmp->op_b--)
+			reverse_rotate(stack_b, 1);
+	else
+		while (tmp->op_b--)
+			rotate(stack_b, 1);
+	if (tmp->rev_rot_a == 1)
+		while (tmp->op_a--)
+			reverse_rotate(stack_a, 1);
+	else
+		while (tmp->op_a--)
+			rotate(stack_a, 1);
+	push_a(stack_a, stack_b, 1);
+	free_list_op(oper);
+}
+
 void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	t_count_op	*oper;
+	t_count_op	*tmp;
+	int number;
+	int min_op;
 
 	oper = total_operations(*stack_a, *stack_b, arg);
-	puts("\nPoka vse ok\n");
+	tmp = oper;
+	number = tmp->number;
+	min_op = tmp->sum_oper;
+	while (tmp->next != NULL)
+	{
+		if (min_op > tmp->sum_oper)
+		{
+			number = tmp->number;
+			min_op = tmp->sum_oper;
+		}
+		tmp = tmp->next;
+	}
+	back_to_the_a(stack_a, stack_b, oper, number);
 }
 
 void	sort_stack_a(t_stack **stack_a, int arg)
@@ -51,6 +89,6 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 		push_b(stack_a, stack_b, 1);
 	sort_stack_a(stack_a, 3);
 	numbers_push = arg - 3;
-	// while (numbers_push--)
+	while (numbers_push-- != 0)
 		moving_numbers(stack_a, stack_b, arg);
 }
