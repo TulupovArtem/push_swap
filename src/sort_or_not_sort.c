@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 14:25:26 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/23 14:31:22 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/23 15:18:43 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,24 @@ int	sorting_check(t_stack *stack_a)
 			return (0);
 	}
 	return (1);
+}
+
+int	how_much_sorting(t_stack *stack_a)
+{
+	t_stack	*tmp;
+	int		count;
+
+	tmp = stack_a->next;
+	count = 1;
+	while (tmp->next->number != stack_a->next->number)
+	{
+		if (tmp->number < tmp->next->number)
+		{
+			tmp = tmp->next;
+			count++;
+		}
+		else
+			return (count);
+	}
+	return (count);
 }

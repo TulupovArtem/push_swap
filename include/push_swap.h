@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/23 14:33:05 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/23 15:02:20 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void 				free_list_op(t_count_op *oper);
 
 /* sort_or_not_sort.c */
 int					sorting_check(t_stack *stack_a);
-
+int					how_much_sorting(t_stack *stack_a);
 
 #endif
