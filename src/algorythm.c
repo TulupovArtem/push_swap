@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/23 15:24:41 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:16:45 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_count_op *oper, int number)
 		while (tmp->op_a--)
 			rotate(stack_a, 1);
 	push_a(stack_a, stack_b, 1);
-	free_list_op(oper);
+	free_list_op(&oper);
 }
 
 void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
@@ -109,8 +109,10 @@ void	final_rotate(t_stack **stack_a)
 void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 {
 	int numbers_push;
+	int	count_sort;
 
-	if (how_much_sorting(*stack_a) < 3)
+	count_sort = how_much_sorting(*stack_a);
+	if (count_sort < 3)
 	{
 		numbers_push = arg - 3;
 		while (numbers_push--)
@@ -122,5 +124,16 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 		final_rotate(stack_a);
 	}
 	else
-		puts("govno");
+	{
+		numbers_push = arg - count_sort;
+		final_rotate(stack_a);
+		if (sorting_check(*stack_a) == 1)
+			return ;
+		while (numbers_push--)
+			push_b(stack_a, stack_b, 1);
+		numbers_push = arg - count_sort;
+		while (numbers_push-- != 0)
+			moving_numbers(stack_a, stack_b, arg);
+		final_rotate(stack_a);
+	}
 }

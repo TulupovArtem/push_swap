@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:15:17 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/22 16:55:38 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/27 17:14:46 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,16 @@ int op_b, t_count_op *oper)
 	new_elem->rev_rot_b = 0;
 }
 
-void		free_list_op(t_count_op *oper)
+void		free_list_op(t_count_op **oper)
 {
 	t_count_op	*tmp;
 
 	tmp = NULL;
-	while (oper)
+	while (*oper)
 	{
-		tmp = oper->next;
-		free(oper);
-		oper = NULL;
-		oper = tmp;
+		tmp = (*oper)->next;
+		free(*oper);
+		*oper = NULL;
+		*oper = tmp;
 	}
 }

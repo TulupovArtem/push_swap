@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 17:44:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 17:52:54 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/27 16:54:37 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		min_num_in_stack(t_stack *stack_a)
 {
-	t_stack	*head;
-	t_stack	*tmp;
-	int		min;
+	t_stack				*head;
+	t_stack				*tmp;
+	long long			min;
 
 	tmp = stack_a;
 	head = stack_a;
@@ -32,9 +32,9 @@ int		min_num_in_stack(t_stack *stack_a)
 
 int		max_num_in_stack(t_stack *stack_a)
 {
-	t_stack	*head;
-	t_stack	*tmp;
-	int		max;
+	t_stack				*head;
+	t_stack				*tmp;
+	long long			max;
 
 	tmp = stack_a;
 	head = stack_a;

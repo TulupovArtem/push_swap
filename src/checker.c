@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/22 17:35:10 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:44:32 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int				main(int ac, char **av)
 		if (check_number(++av, ac) == 1)
 		{
 			ac--;
-			stack_a = init_stack(ft_atoi(*av));
+			stack_a = init_stack(ft_atoll(*av));
 			while (--ac != -1 && *(++av))
-				add_num_in_stack(ft_atoi(*av), stack_a);
+				add_num_in_stack(ft_atoll(*av), stack_a);
 			input(stack_a->previous, stack_b);
 		}
 		else

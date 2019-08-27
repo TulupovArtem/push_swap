@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 18:39:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/16 19:58:46 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/27 18:24:17 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,27 @@ void		free_stacks(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*tmp;
 
 	tmp = NULL;
+	if (stack_a)
+		stack_a->previous->next = NULL;
 	while (stack_a)
 	{
-		tmp = stack_a->next;
+		if (stack_a->next)
+			tmp = stack_a->next;
 		free(stack_a);
 		stack_a = NULL;
 		stack_a = tmp;
+		tmp = NULL;
 	}
+	if (stack_b)
+		stack_b->previous->next = NULL;
 	while (stack_b)
 	{
-		tmp = stack_b->next;
+		if (stack_b->next)
+			tmp = stack_b->next;
 		free(stack_b);
 		stack_b = NULL;
 		stack_b = tmp;
+		tmp = NULL;
 	}
 }
 
@@ -55,7 +63,7 @@ void		del_first_elem_in_stack(t_stack **stack)
 	del = NULL;
 }
 
-void		add_num_in_stack(int number, t_stack *stack)
+void		add_num_in_stack(long long number, t_stack *stack)
 {
 	t_stack	*head;
 	t_stack	*new_elem;
@@ -72,7 +80,7 @@ void		add_num_in_stack(int number, t_stack *stack)
 	head->previous = new_elem;
 }
 
-t_stack		*init_stack(int number)
+t_stack		*init_stack(long long number)
 {
 	t_stack	*stack;
 
