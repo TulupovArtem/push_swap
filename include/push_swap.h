@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 18:24:25 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 18:57:20 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,14 @@ int					max_num_in_stack(t_stack *stack_a);
 /* algorythm.c */
 void				plan_drum(t_stack **stack_a, t_stack **stack_b, int arg);
 void				sort_stack_a(t_stack **stack_a, int arg);
-void				moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg);
+void				moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg, int count_sort);
 void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
 void				final_rotate(t_stack **stack_a);
 
 /* operations.c */
-t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg);
-int 				counting_operations_in_a(t_stack *stack_a, int number);
+t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg, int count_sort);
 void				fill_list_opt(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op *oper);
-int					len_a(t_stack *stack_a);
-int					count_a(int number, t_stack *stack_a, int max, int min);
+
 
 /* work_with_list_op.c */
 t_count_op  		*init_list_op(int number, int op_a, int op_b);
@@ -92,5 +90,10 @@ void 				free_list_op(t_count_op **oper);
 /* sort_or_not_sort.c */
 int					sorting_check(t_stack *stack_a);
 int					how_much_sorting(t_stack *stack_a);
+
+/* operations_a.c */
+int					len_a(t_stack *stack_a);
+int					count_a(int number, t_stack *stack_a, int max, int min);
+int 				counting_operations_in_a(t_stack *stack_a, int number);
 
 #endif

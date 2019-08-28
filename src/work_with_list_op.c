@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:15:17 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 17:14:46 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 18:16:18 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_count_op	*init_list_op(int number, int op_a, int op_b)
 		oper->op_a = op_a;
 	}
 	oper->op_b = op_b;
-	oper->sum_oper = op_a + op_b;
+	oper->sum_oper = oper->op_a + oper->op_b;
 	oper->next = NULL;
 	oper->previous = NULL;
 	oper->rev_rot_b = 0;
@@ -56,7 +56,7 @@ int op_b, t_count_op *oper)
 		new_elem->op_a = op_a;
 	}
 	new_elem->op_b = op_b;
-	new_elem->sum_oper = op_a + op_b;
+	new_elem->sum_oper = new_elem->op_a + new_elem->op_b;
 	oper->next = new_elem;
 	new_elem->previous = oper;
 	new_elem->next = NULL;

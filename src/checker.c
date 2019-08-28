@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/28 15:51:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 16:04:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int				main(int ac, char **av)
 			stack_a = init_stack(ft_atoll(*av));
 			while (--ac != -1 && *(++av))
 				add_num_in_stack(ft_atoll(*av), stack_a);
-			input(stack_a->previous->next, stack_b);
+			input(stack_a, stack_b);
 		}
 		else
 			ft_putendl("Error");

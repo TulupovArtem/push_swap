@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 16:08:48 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/28 15:45:31 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 16:58:18 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	push_a(t_stack **stack_a, t_stack **stack_b, int print)
 	else
 	{
 		add_num_in_stack((*stack_b)->number, *stack_a);
-		// swap(stack_a, 0);
 		reverse_rotate(stack_a, 0);
 		del_first_elem_in_stack(stack_b);
 	}
@@ -44,7 +43,7 @@ void	push_b(t_stack **stack_a, t_stack **stack_b, int print)
 	else
 	{
 		add_num_in_stack((*stack_a)->number, *stack_b);
-		swap(stack_b, 0);
+		reverse_rotate(stack_b, 0);
 		del_first_elem_in_stack(stack_a);
 	}
 	if (print == 1)

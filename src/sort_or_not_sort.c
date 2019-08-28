@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 14:25:26 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 17:00:26 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 16:01:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	sorting_check(t_stack *stack_a)
 	t_stack	*tmp;
 
 	tmp = stack_a;
-	while (tmp->previous->number != stack_a->number)
+	while (tmp->next->number != stack_a->number)
 	{
-		if (tmp->number > tmp->previous->number)
-			tmp = tmp->previous;
+		if (tmp->number < tmp->next->number)
+			tmp = tmp->next;
 		else
 			return (0);
 	}
@@ -32,9 +32,9 @@ int	how_much_sorting(t_stack *stack_a)
 	t_stack	*tmp;
 	int		count;
 
-	tmp = stack_a->next;
-	count = 1;
-	while (tmp->next->number != stack_a->next->number)
+	tmp = stack_a;
+	count = 0;
+	while (tmp->next->number != stack_a->number)
 	{
 		if (tmp->number < tmp->next->number)
 		{

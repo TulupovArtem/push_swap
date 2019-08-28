@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 18:16:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 17:33:21 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ t_count_op *oper, int number)
 	free_list_op(&oper);
 }
 
-void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
+void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg, int count_sort)
 {
 	t_count_op	*oper;
 	t_count_op	*tmp;
 	int			number;
 	int			min_op;
 
-	oper = total_operations(*stack_a, *stack_b, arg);
+	oper = total_operations(*stack_a, *stack_b, arg, count_sort);
 	tmp = oper;
 	number = tmp->number;
 	min_op = tmp->sum_oper;
@@ -68,11 +68,11 @@ void	sort_stack_a(t_stack **stack_a, int arg)
 	max = max_num_in_stack(*stack_a);
 	if (arg <= 3)
 	{
-		while ((*stack_a)->number != max || (*stack_a)->next->number != min)
+		while ((*stack_a)->number != min || (*stack_a)->previous->number != max)
 		{
-			if ((*stack_a)->number == min)
+			if ((*stack_a)->number == max)
 				rotate(stack_a, 1);
-			else if ((*stack_a)->previous->number == min)
+			else if ((*stack_a)->next->number == max)
 				reverse_rotate(stack_a, 1);
 			else if ((*stack_a)->number != min && (*stack_a)->number != max)
 				swap(stack_a, 1);
@@ -90,7 +90,7 @@ void	final_rotate(t_stack **stack_a)
 	count = 0;
 	rev_count = 0;
 	tmp = *stack_a;
-	while (tmp->number != max_num_in_stack(*stack_a))
+	while (tmp->number != min_num_in_stack(*stack_a))
 	{
 		count++;
 		tmp = tmp->next;
@@ -114,13 +114,14 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 	count_sort = how_much_sorting(*stack_a);
 	if (count_sort < 3)
 	{
-		numbers_push = arg - 3;
+		count_sort = 3;
+		numbers_push = arg - count_sort;
 		while (numbers_push--)
 			push_b(stack_a, stack_b, 1);
 		sort_stack_a(stack_a, 3);
-		numbers_push = arg - 3;
+		numbers_push = arg - count_sort;
 		while (numbers_push-- != 0)
-			moving_numbers(stack_a, stack_b, arg);
+			moving_numbers(stack_a, stack_b, arg, count_sort++);
 		final_rotate(stack_a);
 	}
 	else
@@ -133,7 +134,7 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 			push_b(stack_a, stack_b, 1);
 		numbers_push = arg - count_sort;
 		while (numbers_push-- != 0)
-			moving_numbers(stack_a, stack_b, arg);
+			moving_numbers(stack_a, stack_b, arg, count_sort++);
 		final_rotate(stack_a);
 	}
 }
