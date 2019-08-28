@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 18:39:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 18:24:17 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 15:36:13 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		del_first_elem_in_stack(t_stack **stack)
 	t_stack *del;
 	t_stack *end;
 
-	end = (*stack)->next;
+	end = (*stack)->previous;
 	del = *stack;
 	if ((*stack)->number == (*stack)->next->number)
 	{
@@ -54,9 +54,9 @@ void		del_first_elem_in_stack(t_stack **stack)
 		*stack = NULL;
 		return ;
 	}
-	*stack = (*stack)->previous;
-	(*stack)->next = del->next;
-	end->previous = *stack;
+	*stack = (*stack)->next;
+	(*stack)->previous = del->previous;
+	end->next = *stack;
 	del->next = NULL;
 	del->previous = NULL;
 	free(del);

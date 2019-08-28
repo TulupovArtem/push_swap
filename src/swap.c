@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 16:08:33 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 16:32:20 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 15:28:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap(t_stack **stack, int print)
 	if (!*stack || (*stack)->next == *stack)
 		return ;
 	a = *stack;
-	b = a->previous;
+	b = a->next;
 	c = a->number;
 	a->number = b->number;
 	b->number = c;

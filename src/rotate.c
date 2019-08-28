@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 16:09:00 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/15 16:43:31 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 15:11:26 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rotate(t_stack **stack, int print)
 {
 	if (!*stack || (*stack)->next->number == (*stack)->number)
 		return ;
-	*stack = (*stack)->previous;
+	*stack = (*stack)->next;
 	if (print == 1)
 		ft_putendl("ra");
 	else if (print == 2)

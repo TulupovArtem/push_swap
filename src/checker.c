@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/27 18:44:32 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/28 15:51:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_putendl("KO");
 		return ;
 	}
-	while (tmp->previous->number != stack_a->number)
+	while (tmp->next->number != stack_a->number)
 	{
-		if (tmp->number > tmp->previous->number)
-			tmp = tmp->previous;
+		if (tmp->number < tmp->next->number)
+			tmp = tmp->next;
 		else
 		{
 			ft_putendl("KO");
@@ -78,7 +78,7 @@ int				main(int ac, char **av)
 			stack_a = init_stack(ft_atoll(*av));
 			while (--ac != -1 && *(++av))
 				add_num_in_stack(ft_atoll(*av), stack_a);
-			input(stack_a->previous, stack_b);
+			input(stack_a->previous->next, stack_b);
 		}
 		else
 			ft_putendl("Error");
