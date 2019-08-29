@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/29 16:29:34 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/29 18:01:45 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,6 @@ int			len_a(t_stack *stack_a)
 	return (len);
 }
 
-int			if_first_number_is_high(int number, t_stack *stack_a, int count, int order)
-{
-	while (number < stack_a->number)
-	{
-		stack_a = stack_a->next;
-		count++;
-	}
-	while (number > stack_a->number)
-	{
-		stack_a = stack_a->next;
-		count++;
-	}
-	return (count);
-}
-
 int         number_not_min_and_not_max(int number, t_stack *stack_a)
 {
     int count;
@@ -49,20 +34,15 @@ int         number_not_min_and_not_max(int number, t_stack *stack_a)
 
 	len = len_a(stack_a);
     count = 0;
-	if (number < stack_a->number)
-		count = if_first_number_is_high(number, stack_a, count);
-	else
+	while (number > stack_a->number)
 	{
-		while (number > stack_a->number)
-		{
-			stack_a = stack_a->next;
-			count++;
-		}
-		while (number < stack_a->number)
-		{
-			stack_a = stack_a->next;
-			count++;
-		}
+		stack_a = stack_a->next;
+		count++;
+	}
+	while (number < stack_a->number)
+	{
+		stack_a = stack_a->next;
+		count++;
 	}
 	if (count > len / 2)
 	{
