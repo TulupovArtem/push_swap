@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/28 17:33:21 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/30 22:03:29 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ void	final_rotate(t_stack **stack_a)
 		count = 0;
 	}
 	while (rev_count-- != 0)
-		rotate(stack_a, 1);
-	while (count-- != 0)
 		reverse_rotate(stack_a, 1);
+	while (count-- != 0)
+		rotate(stack_a, 1);
 }
 
 void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)

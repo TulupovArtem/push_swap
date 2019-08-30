@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/28 18:57:20 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/30 20:39:35 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct			s_count_op
 	int					rev_rot_b;
 	int					rev_rot_a;
 	struct s_count_op	*next;
-	struct s_count_op	*previous;
 }						t_count_op;
 
 /* check_number.c */
@@ -79,12 +78,12 @@ void				final_rotate(t_stack **stack_a);
 
 /* operations.c */
 t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg, int count_sort);
-void				fill_list_opt(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op *oper);
+void				fill_list_opt(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op **oper);
 
 
 /* work_with_list_op.c */
 t_count_op  		*init_list_op(int number, int op_a, int op_b);
-void  				add_elem_in_list_op(int number, int op_a, int op_b, t_count_op *oper);
+void  				add_elem_in_list_op(int number, int op_a, int op_b, t_count_op **oper);
 void 				free_list_op(t_count_op **oper);
 
 /* sort_or_not_sort.c */

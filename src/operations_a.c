@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/29 18:01:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/08/30 21:16:49 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,17 @@ int         number_not_min_and_not_max(int number, t_stack *stack_a)
 {
     int count;
     int len;
+	t_stack *tmp;
 
+	tmp = stack_a;
 	len = len_a(stack_a);
     count = 0;
-	while (number > stack_a->number)
+	while (tmp->number != min_num_in_stack(stack_a))
 	{
-		stack_a = stack_a->next;
+		tmp = tmp->next;
 		count++;
 	}
-	while (number < stack_a->number)
+	while (number > stack_a->number)
 	{
 		stack_a = stack_a->next;
 		count++;
@@ -70,6 +72,8 @@ int			counting_operations_in_a(t_stack *stack_a, int number)
 
 	min = min_num_in_stack(stack_a);
 	max = max_num_in_stack(stack_a);
+	if (number < stack_a->number && number > stack_a->previous->number)
+		return (0);
 	if (max < number && stack_a->number == min)
 		return (0);
 	else if (min > number && stack_a->previous->number == min)
