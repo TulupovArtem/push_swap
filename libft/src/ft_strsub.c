@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 19:01:28 by idunaver          #+#    #+#             */
-/*   Updated: 2018/12/20 16:57:20 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 11:52:22 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

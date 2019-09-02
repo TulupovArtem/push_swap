@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/28 16:04:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 15:27:59 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,12 @@ int				main(int ac, char **av)
 	stack_a = NULL;
 	if (ac == 1)
 		return (0);
+	else if (ac == 2)
+		return(quoted_argument(++av, &stack_a, &stack_b));
 	else
 	{
-		if (check_number(++av, ac) == 1)
+		if (check_number(++av, ac) == 1 && !(ft_atoll(*av)
+		> INT_MAX) && !(ft_atoll(*av) < INT_MIN))
 		{
 			ac--;
 			stack_a = init_stack(ft_atoll(*av));
