@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 15:10:17 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 15:32:48 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:19:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int		*fill_quoted_array(char *numbers, int count)
 
 void	*back_to_the_checker(int *n, t_stack **stack_a, t_stack **stack_b, int count)
 {
-	if (!(ft_atoll(n) > INT_MAX) && !(ft_atoll(n) < INT_MIN))
+	if (!(ft_atoll(*n) > INT_MAX) && !(ft_atoll(*n) < INT_MIN))
 		{
-			stack_a = init_stack(ft_atoll(n));
-			while (--ac != -1 && *(++av))
-				add_num_in_stack(ft_atoll(n), stack_a);
+			stack_a = init_stack(ft_atoll(*n));
+			while (count-- && ++n)
+				add_num_in_stack(ft_atoll(*n), stack_a);
 			input(stack_a, stack_b);
 		}
 		else
