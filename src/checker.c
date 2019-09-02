@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 15:27:59 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:24:30 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,17 @@ int				main(int ac, char **av)
 			ac--;
 			stack_a = init_stack(ft_atoll(*av));
 			while (--ac != -1 && *(++av))
-				add_num_in_stack(ft_atoll(*av), stack_a);
+			{
+				if (!(ft_atoll(*av) > INT_MAX) && !(ft_atoll(*av) < INT_MIN))
+					add_num_in_stack(ft_atoll(*av), stack_a);
+				else
+				{
+					ft_putendl("Error");
+					return (0);
+				}
+			}
 			input(stack_a, stack_b);
+			free_stacks(stack_a, stack_b);
 		}
 		else
 			ft_putendl("Error");

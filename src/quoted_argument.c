@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 13:04:18 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 15:32:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:36:03 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static int	counting_quoted_numbers(char *av)
 	return (count);
 }
 
-static int	diff_or_not_diff(int *n, int count)
+static int	diff_or_not_diff(long long *n, int count)
 {
 	int i;
 	int j;
@@ -93,7 +93,7 @@ static int	diff_or_not_diff(int *n, int count)
 
 static int	diff_quoted_num(char *numbers, int count)
 {
-	int 	*n;
+	long long 	*n;
 	int		i;
 	int		j;
 	int		count_tmp;
@@ -110,7 +110,7 @@ static int	diff_quoted_num(char *numbers, int count)
 int	quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b)
 {
 	int		count;
-	int		*n;
+	long long		*n;
 
 	count = 0;
 	if (checked_array(*av) == 0 || counting_quoted_numbers(*av) <= 1)

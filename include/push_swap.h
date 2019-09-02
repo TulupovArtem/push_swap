@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 17:17:24 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:35:02 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int 				counting_operations_in_a(t_stack *stack_a, int number);
 int					quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b);
 
 /* work_with_quot_arr.c */
-int					*fill_quoted_array(char *numbers, int count);
-void				*back_to_the_checker(int *n, t_stack **stack_a, t_stack **stack_b, int count);
+long long			*fill_quoted_array(char *numbers, int count);
+void				back_to_the_checker(long long *n, t_stack **stack_a, t_stack **stack_b, int count);
 
 #endif
