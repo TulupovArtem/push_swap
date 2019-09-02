@@ -8,7 +8,7 @@
             "name": "gcc build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/idunaver/Desktop/push_swap/push_swap",
+            "program": "/Users/tulupovArtem/Desktop/push_swap/push_swap",
             "args": [2 7 4 8 1 3 6 5 9],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

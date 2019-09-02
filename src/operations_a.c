@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/30 21:16:49 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/02 10:11:28 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int         number_not_min_and_not_max(int number, t_stack *stack_a)
 		tmp = tmp->next;
 		count++;
 	}
-	while (number > stack_a->number)
+	while (number > tmp->number)
 	{
-		stack_a = stack_a->next;
+		tmp = tmp->next;
 		count++;
 	}
 	if (count > len / 2)
