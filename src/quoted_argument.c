@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 13:04:18 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 15:05:42 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 15:56:13 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	checked_array(char *av)
 				return (0);
 			}
 		}
-		if (((tmp[i] < '0' && tmp[i] > '9') && tmp[i] != ' ' && tmp[i] != '-'))
+		if (tmp[i] < '0' && tmp[i] > '9' && tmp[i] != ' ' && tmp[i] != '-')
 		{
 			ft_putendl("Error");
 			return (0);
