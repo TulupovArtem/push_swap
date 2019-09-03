@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 15:10:17 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 15:19:38 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:41:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long long		*fill_quoted_array(char *numbers, int count)
 	i = 0;
 	j = 0;
 	if (!(n = (long long *)malloc(count * sizeof(long long))))
-        return (0);
+		return (0);
 	while (numbers[i])
 	{
 		while (numbers[i] == ' ' && numbers[i] != '\0')

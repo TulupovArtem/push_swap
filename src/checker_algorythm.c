@@ -6,13 +6,14 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 16:29:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:25:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	back_to_the_checker(long long *n, t_stack **stack_a, t_stack **stack_b, int count)
+void			back_to_the_checker(long long *n, t_stack **stack_a,
+t_stack **stack_b, int count)
 {
 	if (!(*n > INT_MAX) && !(*n < INT_MIN))
 	{
@@ -57,27 +58,39 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 	ft_putendl("OK");
 }
 
-void		input(t_stack *stack_a, t_stack *stack_b)
+void			input(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*line;
 
 	while (get_next_line(0, &line) > 0)
 	{
-		if (*line == 's')
-			what_swap(&line, &stack_a, &stack_b);
-		else if (*line == 'p')
-			what_push(&line, &stack_a, &stack_b);
-		else if (*line == 'r')
-		{
-			if (*(line + 1) == 'r')
-				what_reverse_rotate(&line, &stack_a, &stack_b);
-			else
-				what_rotate(&line, &stack_a, &stack_b);
-		}
-		else if (*(line) == '\0')
+		if (*line == '\0')
 		{
 			sort_or_not_sort(stack_a, stack_b);
 			return ;
+		}
+		else if (*line == 's')
+		{
+			if (what_swap(&line, &stack_a, &stack_b) == -1)
+				return ;
+		}
+		else if (*line == 'p')
+		{
+			if (what_push(&line, &stack_a, &stack_b) == -1)
+				return ;
+		}
+		else if (*(line++) == 'r')
+		{
+			if (*line == 'r')
+			{
+				if (what_reverse_rotate(&line, &stack_a, &stack_b) == -1)
+					return ;
+			}
+			else
+			{
+				if (what_rotate(&line, &stack_a, &stack_b) == -1)
+					return ;
+			}
 		}
 		else
 		{

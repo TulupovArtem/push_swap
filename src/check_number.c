@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 15:19:46 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:24:20 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	different_numbers(char **number, int count)
 	j = 0;
 	count_tmp = count;
 	tmp = number;
-    if (!(n = (int *)malloc(count * sizeof(int))))
-        return (0);
+	if (!(n = (int *)malloc(count * sizeof(int))))
+		return (0);
 	while (count)
 		n[--count] = ft_atoll(*(tmp++));
 	while (i < count_tmp)
@@ -37,7 +37,7 @@ static int	different_numbers(char **number, int count)
 		else
 			j = ++i;
 	}
-    free(n);
+	free(n);
 	return (1);
 }
 

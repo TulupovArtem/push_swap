@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 13:04:18 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 16:41:37 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:39:42 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ static int	diff_or_not_diff(long long *n, int count)
 
 static int	diff_quoted_num(char *numbers, int count)
 {
-	long long 	*n;
-	int		i;
-	int		j;
-	int		count_tmp;
+	long long	*n;
+	int			i;
+	int			j;
+	int			count_tmp;
 
 	i = 0;
 	j = 0;
@@ -103,7 +103,8 @@ static int	diff_quoted_num(char *numbers, int count)
 	return (1);
 }
 
-int			quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int checker)
+int			quoted_argument(char **av, t_stack **stack_a,
+t_stack **stack_b, int checker)
 {
 	int			count;
 	long long	*n;
@@ -111,13 +112,15 @@ int			quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int check
 	count = 0;
 	if (checked_array(*av) == 0 || counting_quoted_numbers(*av) <= 1)
 	{
-		ft_putendl("Error");
+		if (checker == 1)
+			ft_putendl("Error");
 		return (1);
 	}
 	count = counting_quoted_numbers(*av);
 	if (diff_quoted_num(*av, count) == 0)
 	{
-		ft_putendl("Error");
+		if (checker == 1)
+			ft_putendl("Error");
 		return (1);
 	}
 	n = fill_quoted_array(*av, count);

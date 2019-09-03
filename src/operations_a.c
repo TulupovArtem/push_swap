@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 10:11:28 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:35:51 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int			len_a(t_stack *stack_a)
 	return (len);
 }
 
-int         number_not_min_and_not_max(int number, t_stack *stack_a)
+int			number_not_min_and_not_max(int number, t_stack *stack_a)
 {
-    int count;
-    int len;
-	t_stack *tmp;
+	int		count;
+	int		len;
+	t_stack	*tmp;
 
 	tmp = stack_a;
 	len = len_a(stack_a);
-    count = 0;
+	count = 0;
 	while (tmp->number != min_num_in_stack(stack_a))
 	{
 		tmp = tmp->next;
@@ -51,7 +51,7 @@ int         number_not_min_and_not_max(int number, t_stack *stack_a)
 		count = len - count;
 		count *= -1;
 	}
-    return (count);
+	return (count);
 }
 
 int			count_a(int number, t_stack *stack_a, int max, int min)
@@ -59,10 +59,10 @@ int			count_a(int number, t_stack *stack_a, int max, int min)
 	if (number < min && stack_a->number == max)
 		return (1);
 	if (number < max && number > min)
-        return (number_not_min_and_not_max(number, stack_a));
+		return (number_not_min_and_not_max(number, stack_a));
 	if (number > max && stack_a->previous->number == min)
-	    return (-1);
-    return (0);
+		return (-1);
+	return (0);
 }
 
 int			counting_operations_in_a(t_stack *stack_a, int number)

@@ -6,51 +6,14 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:11:34 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 15:19:44 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:37:01 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	back_to_the_push_swap(long long *n, t_stack **stack_a, t_stack **stack_b, int count)
-{
-	int arg;
-
-	arg = count;
-	if (!(*n > INT_MAX) && !(*n < INT_MIN))
-	{
-		*stack_a = init_stack(*n);
-		while (--count && ++n)
-		{
-			if (!(*n > INT_MAX) && !(*n < INT_MIN))
-				add_num_in_stack(*n, *stack_a);
-			else
-			{
-				ft_putendl("Error");
-				return ;
-			}
-		}
-		sort_numbers(stack_a, stack_b, arg);
-		free_stacks(*stack_a, *stack_b);
-	}
-	else
-		ft_putendl("Error");
-}
-
-void		sort_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
-{
-	if (sorting_check(*stack_a) == 1)
-		return ;
-	if (arg == 1)
-		return ;
-	if (arg <= 3)
-		sort_stack_a(stack_a, arg);
-	else
-		plan_drum(stack_a, stack_b, arg);
-	return ;
-}
-
-void		exception_in_reverse_opt(int number, t_stack *stack_a, t_count_op **oper, int head_number)
+void		exception_in_reverse_opt(int number, t_stack *stack_a,
+t_count_op **oper, int head_number)
 {
 	t_count_op *tmp;
 
@@ -68,7 +31,7 @@ void		fill_list_opt(t_stack *stack_b, t_stack *stack_a,
 int count_num, t_count_op **oper)
 {
 	int			operations;
-	int 		head_number;
+	int			head_number;
 	t_count_op	*tmp;
 
 	tmp = *oper;
@@ -105,7 +68,8 @@ int count_num, t_count_op **oper)
 	}
 }
 
-t_count_op	*total_operations(t_stack *stack_a, t_stack *stack_b, int arg, int count_sort)
+t_count_op	*total_operations(t_stack *stack_a, t_stack *stack_b,
+int arg, int count_sort)
 {
 	t_count_op	*oper;
 	int			count_num;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorythm.c                                        :+:      :+:    :+:   */
+/*   algorythm_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/08/30 22:03:29 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 18:23:25 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ t_count_op *oper, int number)
 	free_list_op(&oper);
 }
 
-void	moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg, int count_sort)
+void	moving_numbers(t_stack **stack_a, t_stack **stack_b,
+int arg, int count_sort)
 {
 	t_count_op	*oper;
 	t_count_op	*tmp;
@@ -104,37 +105,4 @@ void	final_rotate(t_stack **stack_a)
 		reverse_rotate(stack_a, 1);
 	while (count-- != 0)
 		rotate(stack_a, 1);
-}
-
-void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
-{
-	int numbers_push;
-	int	count_sort;
-
-	count_sort = how_much_sorting(*stack_a);
-	if (count_sort < 3)
-	{
-		count_sort = 3;
-		numbers_push = arg - count_sort;
-		while (numbers_push--)
-			push_b(stack_a, stack_b, 1);
-		sort_stack_a(stack_a, 3);
-		numbers_push = arg - count_sort;
-		while (numbers_push-- != 0)
-			moving_numbers(stack_a, stack_b, arg, count_sort++);
-		final_rotate(stack_a);
-	}
-	else
-	{
-		numbers_push = arg - count_sort;
-		final_rotate(stack_a);
-		if (sorting_check(*stack_a) == 1)
-			return ;
-		while (numbers_push--)
-			push_b(stack_a, stack_b, 1);
-		numbers_push = arg - count_sort;
-		while (numbers_push-- != 0)
-			moving_numbers(stack_a, stack_b, arg, count_sort++);
-		final_rotate(stack_a);
-	}
 }
