@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 18:25:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 20:36:21 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,40 +62,21 @@ void			input(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*line;
 
-	while (get_next_line(0, &line) > 0)
+	while (get_next_line(0, &line))
 	{
-		if (*line == '\0')
+		if (ft_strchr(line, 's'))
+			what_swap(&line, &stack_a, &stack_b);
+		else if (ft_strchr(line, 'p'))
+			what_push(&line, &stack_a, &stack_b);
+		else if (ft_strchr(line, 'r'))
 		{
-			sort_or_not_sort(stack_a, stack_b);
-			return ;
-		}
-		else if (*line == 's')
-		{
-			if (what_swap(&line, &stack_a, &stack_b) == -1)
-				return ;
-		}
-		else if (*line == 'p')
-		{
-			if (what_push(&line, &stack_a, &stack_b) == -1)
-				return ;
-		}
-		else if (*(line++) == 'r')
-		{
-			if (*line == 'r')
-			{
-				if (what_reverse_rotate(&line, &stack_a, &stack_b) == -1)
-					return ;
-			}
+			if (ft_strlen(line) > 2 && ft_strchr(line + 1, 'r'))
+				what_reverse_rotate(&line, &stack_a, &stack_b);
 			else
-			{
-				if (what_rotate(&line, &stack_a, &stack_b) == -1)
-					return ;
-			}
+				what_rotate(&line, &stack_a, &stack_b);
 		}
-		else
-		{
-			ft_putendl("Error");
-			return ;
-		}
+		else if (ft_strchr(line, '\0'))
+			break ;
 	}
+	sort_or_not_sort(stack_a, stack_b);
 }
