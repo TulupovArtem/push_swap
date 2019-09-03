@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 15:18:37 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 16:29:19 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,22 @@ void		input(t_stack *stack_a, t_stack *stack_b)
 			what_swap(&line, &stack_a, &stack_b);
 		else if (*line == 'p')
 			what_push(&line, &stack_a, &stack_b);
-		else if (*(line++) == 'r')
+		else if (*line == 'r')
 		{
-			if (*(line) == 'r')
+			if (*(line + 1) == 'r')
 				what_reverse_rotate(&line, &stack_a, &stack_b);
 			else
 				what_rotate(&line, &stack_a, &stack_b);
 		}
-		else
+		else if (*(line) == '\0')
 		{
 			sort_or_not_sort(stack_a, stack_b);
 			return ;
 		}
+		else
+		{
+			ft_putendl("Error");
+			return ;
+		}
 	}
-	sort_or_not_sort(stack_a, stack_b);
 }

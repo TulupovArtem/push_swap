@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 13:04:18 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 15:56:13 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 16:41:37 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,14 @@ static int	checked_array(char *av)
 		{
 			i++;
 			if (tmp[i] == '-')
-			{
-				ft_putendl("Error");
 				return (0);
-			}
 		}
-		if (tmp[i] < '0' && tmp[i] > '9' && tmp[i] != ' ' && tmp[i] != '-')
-		{
-			ft_putendl("Error");
+		if ((tmp[i] < '0' || tmp[i] > '9') && tmp[i] != ' ' && tmp[i] != '-')
 			return (0);
-		}
 		i++;
 	}
+	if (i == 1)
+		return (0);
 	return (1);
 }
 
@@ -64,7 +60,7 @@ static int	counting_quoted_numbers(char *av)
 			i++;
 	}
 	if (count == 1)
-		ft_putendl("Error");
+		return (0);
 	return (count);
 }
 
@@ -114,7 +110,10 @@ int			quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int check
 
 	count = 0;
 	if (checked_array(*av) == 0 || counting_quoted_numbers(*av) <= 1)
+	{
+		ft_putendl("Error");
 		return (1);
+	}
 	count = counting_quoted_numbers(*av);
 	if (diff_quoted_num(*av, count) == 0)
 	{
