@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/03 18:15:09 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/03 21:20:49 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCDIR = src
 LIBDIR = libft
 HEADER = -I ./include
 HEADER_LIBFT = -I ./libft/include
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g -O0
 
 CHECKER = checker
 SRC_CHECKER_NAME = checker.c \

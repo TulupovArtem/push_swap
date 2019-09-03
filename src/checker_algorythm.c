@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 20:36:21 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 22:52:23 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,10 @@ void			input(t_stack *stack_a, t_stack *stack_b)
 			else
 				what_rotate(&line, &stack_a, &stack_b);
 		}
-		else if (ft_strchr(line, '\0'))
+		else if (*line == '\0')
 			break ;
+		else
+			return ;
 	}
 	sort_or_not_sort(stack_a, stack_b);
 }
