@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
+#    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/02 15:12:23 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/03 15:23:47 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,14 @@ SRC_CHECKER_NAME = checker.c \
 				reverse_rotate.c \
 				what_operation.c \
 				quoted_argument.c \
-				work_with_quot_arr.c
+				work_with_quot_arr.c \
+				checker_algorythm.c \
+				operations.c \
+				max_min.c \
+				algorythm.c \
+				work_with_list_op.c \
+				sort_or_not_sort.c \
+				operations_a.c
 OBJ_CHECKER_NAME = $(SRC_CHECKER_NAME:.c=.o);
 SRC_CHECKER = $(addprefix $(OBJDIR)/, $(SRC_CHECKER_NAME))
 OBJ_CHECKER = $(addprefix $(OBJDIR)/, $(OBJ_CHECKER_NAME))
@@ -44,12 +51,14 @@ SRC_PUSH_SWAP_NAME = push_swap.c \
 				reverse_rotate.c \
 				max_min.c \
 				algorythm.c \
-				operations.c \
 				work_with_list_op.c \
 				sort_or_not_sort.c \
 				operations_a.c \
 				quoted_argument.c \
-				work_with_quot_arr.c
+				work_with_quot_arr.c \
+				operations.c \
+				checker_algorythm.c \
+				what_operation.c
 OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
 OBJ_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(OBJ_PUSH_SWAP_NAME))

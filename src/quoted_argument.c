@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quoted_argument.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/02 13:04:18 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/02 17:36:03 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/03 15:05:42 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,10 @@ static int	diff_quoted_num(char *numbers, int count)
 	return (1);
 }
 
-int	quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b)
+int			quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int checker)
 {
-	int		count;
-	long long		*n;
+	int			count;
+	long long	*n;
 
 	count = 0;
 	if (checked_array(*av) == 0 || counting_quoted_numbers(*av) <= 1)
@@ -122,6 +122,10 @@ int	quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b)
 		return (1);
 	}
 	n = fill_quoted_array(*av, count);
-	back_to_the_checker(n, stack_a, stack_b, count);
+	if (checker == 1)
+		back_to_the_checker(n, stack_a, stack_b, count);
+	else
+		back_to_the_push_swap(n, stack_a, stack_b, count);
+	free(n);
 	return (0);
 }
