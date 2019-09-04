@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 18:33:52 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:15:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char **av, int ac)
 				return ;
 			}
 		}
-		input(*stack_a, *stack_b);
+		input(stack_a, stack_b);
 		free_stacks(*stack_a, *stack_b);
 	}
 	else

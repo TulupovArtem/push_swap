@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 19:58:44 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:14:26 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int					quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int che
 long long			*fill_quoted_array(char *numbers, int count);
 
 /* checker_algorythm.c */
-void				input(t_stack *stack_a, t_stack *stack_b);
+void				input(t_stack **stack_a, t_stack **stack_b);
 void				back_to_the_checker(long long *n, t_stack **stack_a, t_stack **stack_b, int count);
 
 #endif
