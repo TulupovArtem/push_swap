@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 17:27:09 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 17:34:07 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ void			input(t_stack **stack_a, t_stack **stack_b)
 		else if (*line == '\0')
 			break ;
 		else
+		{
+			ft_putendl("Error");
 			return ;
+		}
 	}
 	sort_or_not_sort(*stack_a, *stack_b);
 }

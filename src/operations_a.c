@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 18:35:51 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 20:49:08 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int			count_a(int number, t_stack *stack_a, int max, int min)
 		return (number_not_min_and_not_max(number, stack_a));
 	if (number > max && stack_a->previous->number == min)
 		return (-1);
+	if (number < min && number < max && stack_a->number != max)
+		return (number_not_min_and_not_max(number, stack_a));
 	return (0);
 }
 
@@ -76,7 +78,7 @@ int			counting_operations_in_a(t_stack *stack_a, int number)
 		return (0);
 	if (max < number && stack_a->number == min)
 		return (0);
-	else if (min > number && stack_a->previous->number == min)
+	else if (min > number && stack_a->previous->number == min && stack_a->number == max)
 		return (0);
 	else
 		return (count_a(number, stack_a, max, min));

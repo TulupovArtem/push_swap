@@ -6,13 +6,13 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:06:31 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 20:11:35 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 18:59:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
+void			what_swap(char **line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strcmp(*line, "sa") == 0)
 		swap(stack_a, 0);

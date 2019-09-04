@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 18:23:25 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 20:55:48 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_count_op *oper, int number)
 		tmp = tmp->next;
 	if (tmp->rev_rot_b == 1)
 		while (tmp->op_b--)
-			reverse_rotate(stack_b, 1);
+			reverse_rotate(stack_b, 2);
 	else
 		while (tmp->op_b--)
 			rotate(stack_b, 1);
@@ -48,7 +48,7 @@ int arg, int count_sort)
 	tmp = oper;
 	number = tmp->number;
 	min_op = tmp->sum_oper;
-	while (tmp->next != NULL)
+	while (tmp)
 	{
 		if (min_op > tmp->sum_oper)
 		{

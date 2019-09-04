@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 19:11:34 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/03 18:37:01 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 20:41:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int count_num, t_count_op **oper)
 		counting_operations_in_a(stack_a, stack_b->number), ++operations, oper);
 		tmp = tmp->next;
 	}
-	if ((count_num / 2) % 2 == 0 && count_num % 2 != 0 && operations != count_num - 1)
+	if ((count_num / 2) % 2 == 0 && count_num % 2 != 0 &&
+	operations != count_num - 1)
 	{
 		stack_b = stack_b->next;
 		add_elem_in_list_op(stack_b->number,
@@ -53,7 +54,8 @@ int count_num, t_count_op **oper)
 	}
 	if (operations == 1 && stack_b->number != head_number)
 	{
-		exception_in_reverse_opt(stack_b->next->number, stack_a, oper, head_number);
+		exception_in_reverse_opt(stack_b->next->number, stack_a,
+		oper, head_number);
 		return ;
 	}
 	while (operations != 0 && operations != count_num - 1)
