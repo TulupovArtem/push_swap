@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 20:55:48 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/04 21:39:39 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_count_op *oper, int number)
 			reverse_rotate(stack_b, 2);
 	else
 		while (tmp->op_b--)
-			rotate(stack_b, 1);
+			rotate(stack_b, 2);
 	if (tmp->rev_rot_a == 1)
 		while (tmp->op_a--)
 			reverse_rotate(stack_a, 1);
