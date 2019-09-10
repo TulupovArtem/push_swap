@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:12:33 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 23:16:21 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 19:58:57 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	count_sort_not_three(t_stack **stack_a, t_stack **stack_b, int arg)
 
 	count_sort = how_much_sorting(*stack_a);
 	numbers_push = arg - count_sort;
-	final_rotate(stack_a);
 	if (sorting_check(*stack_a) == 1)
 		return ;
 	while (numbers_push--)
@@ -36,7 +35,7 @@ void	plan_drum(t_stack **stack_a, t_stack **stack_b, int arg)
 	int	count_sort;
 
 	count_sort = how_much_sorting(*stack_a);
-	if (count_sort < 3)
+	if (count_sort <= 3)
 	{
 		count_sort = 3;
 		numbers_push = arg - count_sort;

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 18:55:30 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 22:52:31 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:06:32 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,6 @@ int			number_is_max(t_stack *stack_a)
 		count = len - count + 1;
 	else
 		count = count * -1 + 1;
-	// if (count > len / 2 && count % 2 != 0)
-	// 	count = len - count;
-	// else
-	// 	count = count * -1;
 	return (count);
 }
 
@@ -89,7 +85,8 @@ int			count_a(int number, t_stack *stack_a, int max, int min)
 		return (-1);
 	if (number < min && number < max && stack_a->number != max)
 		return (number_not_min_and_not_max(number, stack_a));
-	if (number > max && stack_a->number != max && stack_a->previous->number != min)
+	if (number > max && stack_a->number != max
+	&& stack_a->previous->number != min)
 		return (number_is_max(stack_a));
 	if (number > max && stack_a->number == max)
 		return (1);
@@ -107,7 +104,8 @@ int			counting_operations_in_a(t_stack *stack_a, int number)
 		return (0);
 	if (max < number && stack_a->number == min)
 		return (0);
-	else if (min > number && stack_a->previous->number == min && stack_a->number == max)
+	else if (min > number && stack_a->previous->number
+	== min && stack_a->number == max)
 		return (0);
 	else
 		return (count_a(number, stack_a, max, min));

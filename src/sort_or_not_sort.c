@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 14:25:26 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 23:13:12 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 19:47:06 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	how_much_sorting(t_stack *stack_a)
 			count++;
 		}
 		else
-			return (count);
+			return (count + 1);
 	}
 	return (count);
 }

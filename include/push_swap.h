@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 17:14:26 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:08:13 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void				final_rotate(t_stack **stack_a);
 /* operations.c */
 t_count_op			*total_operations(t_stack *stack_a, t_stack *stack_b, int arg, int count_sort);
 void				fill_list_opt(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op **oper);
-void				exception_in_reverse_opt(int number, t_stack *stack_a, t_count_op **oper, int head_number);
+void				count_num_even(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op **oper);
+void				count_num_not_even(t_stack *stack_b, t_stack *stack_a, int count_num, t_count_op **oper);
 
 /* work_with_list_op.c */
 t_count_op  		*init_list_op(int number, int op_a, int op_b);
