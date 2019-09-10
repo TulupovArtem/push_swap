@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/03 21:20:49 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/10 21:46:09 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,7 @@ SRC_CHECKER_NAME = checker.c \
 				rotate.c \
 				reverse_rotate.c \
 				what_operation.c \
-				quoted_argument.c \
-				work_with_quot_arr.c \
-				checker_algorythm.c \
-				operations.c \
-				max_min.c \
-				algorythm_1.c \
-				work_with_list_op.c \
-				sort_or_not_sort.c \
-				operations_a.c \
-				algorythm_2.c
+				checker_algorythm.c
 OBJ_CHECKER_NAME = $(SRC_CHECKER_NAME:.c=.o);
 SRC_CHECKER = $(addprefix $(OBJDIR)/, $(SRC_CHECKER_NAME))
 OBJ_CHECKER = $(addprefix $(OBJDIR)/, $(OBJ_CHECKER_NAME))
@@ -55,11 +46,7 @@ SRC_PUSH_SWAP_NAME = push_swap.c \
 				work_with_list_op.c \
 				sort_or_not_sort.c \
 				operations_a.c \
-				quoted_argument.c \
-				work_with_quot_arr.c \
 				operations.c \
-				checker_algorythm.c \
-				what_operation.c \
 				algorythm_2.c
 OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
