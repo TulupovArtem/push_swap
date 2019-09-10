@@ -6,34 +6,11 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/04 21:27:09 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:44:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void			back_to_the_checker(long long *n, t_stack **stack_a,
-t_stack **stack_b, int count)
-{
-	if (!(*n > INT_MAX) && !(*n < INT_MIN))
-	{
-		*stack_a = init_stack(*n);
-		while (--count && ++n)
-		{
-			if (!(*n > INT_MAX) && !(*n < INT_MIN))
-				add_num_in_stack(*n, *stack_a);
-			else
-			{
-				ft_putendl("Error");
-				return ;
-			}
-		}
-		input(stack_a, stack_b);
-		free_stacks(*stack_a, *stack_b);
-	}
-	else
-		ft_putendl("Error");
-}
 
 static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:12:33 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/10 19:58:57 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:45:45 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,30 +62,4 @@ void	sort_numbers(t_stack **stack_a, t_stack **stack_b, int arg)
 	else
 		plan_drum(stack_a, stack_b, arg);
 	return ;
-}
-
-void	back_to_the_push_swap(long long *n, t_stack **stack_a,
-t_stack **stack_b, int count)
-{
-	int arg;
-
-	arg = count;
-	if (!(*n > INT_MAX) && !(*n < INT_MIN))
-	{
-		*stack_a = init_stack(*n);
-		while (--count && ++n)
-		{
-			if (!(*n > INT_MAX) && !(*n < INT_MIN))
-				add_num_in_stack(*n, *stack_a);
-			else
-			{
-				ft_putendl("Error");
-				return ;
-			}
-		}
-		sort_numbers(stack_a, stack_b, arg);
-		free_stacks(*stack_a, *stack_b);
-	}
-	else
-		ft_putendl("Error");
 }

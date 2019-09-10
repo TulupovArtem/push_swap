@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/10 20:08:13 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:45:52 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,8 @@ int					len_a(t_stack *stack_a);
 int					count_a(int number, t_stack *stack_a, int max, int min);
 int 				counting_operations_in_a(t_stack *stack_a, int number);
 void				sort_numbers(t_stack **stack_a, t_stack **stack_b, int arg);
-void				back_to_the_push_swap(long long *n, t_stack **stack_a, t_stack **stack_b, int count);
-
-/* quoted_arguments.c */
-int					quoted_argument(char **av, t_stack **stack_a, t_stack **stack_b, int checker);
-
-/* work_with_quot_arr.c */
-long long			*fill_quoted_array(char *numbers, int count);
 
 /* checker_algorythm.c */
 void				input(t_stack **stack_a, t_stack **stack_b);
-void				back_to_the_checker(long long *n, t_stack **stack_a, t_stack **stack_b, int count);
 
 #endif
