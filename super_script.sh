@@ -1,1 +1,0 @@
-ARG=`ruby -e "puts (1..7).to_a.shuffle.join(' ')"` | ./push_swap $ARG | ./checker $ARG
