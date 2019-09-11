@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 22:04:39 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:23:53 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		len_double_arr(char **arr)
 {
-	int count;
+	int		count;
 	char	**tmp;
 
 	tmp = arr;
@@ -53,7 +53,6 @@ int		count_elems(char **av)
 	int count;
 	int i;
 	int j;
-
 
 	i = 1;
 	j = 0;

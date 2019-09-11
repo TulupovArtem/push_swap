@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 21:19:13 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:33:26 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ char				**create_new_av(char **av);
 t_stack				*fill_stack(t_stack **stack_a, char **av, int ac);
 
 /* visual.c */
-void				visual_stacks(t_stack **stack_a, t_stack **stack_b);
+void				visual_stacks(t_stack **stack_a, t_stack **stack_b, int visual);
+int					len_stack(t_stack *stack);
 
 #endif

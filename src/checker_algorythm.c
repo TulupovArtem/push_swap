@@ -6,19 +6,19 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 21:12:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:32:04 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b, int visual)
+static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b,
+int visual)
 {
 	t_stack	*tmp;
 
 	tmp = stack_a;
-	if (visual == 1)
-		visual_stacks(&stack_a, &stack_b);
+	visual_stacks(&stack_a, &stack_b, visual);
 	if (stack_b)
 	{
 		ft_putendl("KO");
@@ -61,8 +61,7 @@ void			input(t_stack **stack_a, t_stack **stack_b, int visual)
 			ft_putendl("Error");
 			return ;
 		}
-		if (visual == 1)
-			visual_stacks(stack_a, stack_b);
+		visual_stacks(stack_a, stack_b, visual);
 	}
 	sort_or_not_sort(*stack_a, *stack_b, visual);
 }

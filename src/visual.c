@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 22:19:14 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/11 22:45:03 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,14 @@ int			len_stack(t_stack *stack)
 	return (len);
 }
 
-void			visual_stacks(t_stack **stack_a, t_stack **stack_b)
+void		stack_number_output(t_stack **stack_a, t_stack **stack_b,
+int max_len)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
-	int     len_a;
-	int		len_b;
-	int		max_len;
 
-	len_a = len_stack(*stack_a);
-	len_b = len_stack(*stack_b);
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
-	printf(" ---- ----\n");
-	printf("| a  | b  |\n");
-	printf(" ---- ----\n");
-	if (len_a > len_b)
-		max_len = len_a;
-	else
-		max_len = len_b;
 	while (max_len--)
 	{
 		if (tmp_a && tmp_b && tmp_a->next->number != (*stack_a)->number
@@ -75,5 +64,25 @@ void			visual_stacks(t_stack **stack_a, t_stack **stack_b)
 		if (tmp_b && tmp_b->next->number != (*stack_b)->number)
 			tmp_b = tmp_b->next;
 	}
+}
+
+void		visual_stacks(t_stack **stack_a, t_stack **stack_b, int visual)
+{
+	int		len_a;
+	int		len_b;
+	int		max_len;
+
+	if (visual == 0)
+		return ;
+	len_a = len_stack(*stack_a);
+	len_b = len_stack(*stack_b);
+	printf(" ---- ----\n");
+	printf("| a  | b  |\n");
+	printf(" ---- ----\n");
+	if (len_a > len_b)
+		max_len = len_a;
+	else
+		max_len = len_b;
+	stack_number_output(stack_a, stack_b, max_len);
 	printf(" ---- ----\n");
 }
