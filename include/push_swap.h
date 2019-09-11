@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/10 20:45:52 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/11 21:19:13 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,16 @@ int 				counting_operations_in_a(t_stack *stack_a, int number);
 void				sort_numbers(t_stack **stack_a, t_stack **stack_b, int arg);
 
 /* checker_algorythm.c */
-void				input(t_stack **stack_a, t_stack **stack_b);
+void				input(t_stack **stack_a, t_stack **stack_b, int visual);
+
+/* new_av.c */
+int					len_double_arr(char **arr);
+int					count_elems(char **av);
+void				free_double_arr(char **double_arr);
+char				**create_new_av(char **av);
+t_stack				*fill_stack(t_stack **stack_a, char **av, int ac);
+
+/* visual.c */
+void				visual_stacks(t_stack **stack_a, t_stack **stack_b);
 
 #endif

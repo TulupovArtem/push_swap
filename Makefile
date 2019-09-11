@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/10 21:46:09 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/11 21:36:13 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCDIR = src
 LIBDIR = libft
 HEADER = -I ./include
 HEADER_LIBFT = -I ./libft/include
-FLAGS = -Wall -Wextra -Werror -g -O0
+FLAGS = -Wall -Wextra -Werror -g
 
 CHECKER = checker
 SRC_CHECKER_NAME = checker.c \
@@ -28,7 +28,9 @@ SRC_CHECKER_NAME = checker.c \
 				rotate.c \
 				reverse_rotate.c \
 				what_operation.c \
-				checker_algorythm.c
+				checker_algorythm.c \
+				visual.c \
+				new_av.c
 OBJ_CHECKER_NAME = $(SRC_CHECKER_NAME:.c=.o);
 SRC_CHECKER = $(addprefix $(OBJDIR)/, $(SRC_CHECKER_NAME))
 OBJ_CHECKER = $(addprefix $(OBJDIR)/, $(OBJ_CHECKER_NAME))
@@ -47,7 +49,8 @@ SRC_PUSH_SWAP_NAME = push_swap.c \
 				sort_or_not_sort.c \
 				operations_a.c \
 				operations.c \
-				algorythm_2.c
+				algorythm_2.c \
+				new_av.c
 OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
 OBJ_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(OBJ_PUSH_SWAP_NAME))
