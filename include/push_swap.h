@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 21:09:29 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:22:59 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,7 @@ int					search_width(t_stack *stack_a, t_stack *stack_b);
 
 /* back_to_the_a.c */
 void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
+void				head_table(int width);
+
 
 #endif

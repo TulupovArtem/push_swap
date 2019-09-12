@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 19:51:31 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:13:28 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b, int visual)
 	ft_putendl("OK");
 }
 
-static int		rotate_or_reverse_rotate(t_stack **stack_a, t_stack **stack_b, char *line)
+static int		rotate_or_reverse_rotate(t_stack **stack_a,
+t_stack **stack_b, char *line)
 {
 	if (ft_strlen(line) > 2 && ft_strchr(line + 1, 'r'))
 	{
@@ -51,7 +52,8 @@ static int		rotate_or_reverse_rotate(t_stack **stack_a, t_stack **stack_b, char 
 	return (1);
 }
 
-static int		gnl_plus_input(t_stack **stack_a, t_stack **stack_b, char *line)
+static int		gnl_plus_input(t_stack **stack_a,
+t_stack **stack_b, char *line)
 {
 	if (ft_strchr(line, 's'))
 	{

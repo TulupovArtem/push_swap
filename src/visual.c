@@ -6,37 +6,11 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 21:07:57 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:21:35 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void		head_table(int width)
-{
-	int tmp;
-
-	tmp = (width - 2) / 2;
-	printf("\n");
-	line(width);
-	printf("|");
-	while (tmp--)
-		printf(" ");
-	printf("a");
-	tmp = (width - 1) / 2;
-	while (tmp--)
-		printf(" ");
-	printf("|");
-	tmp = (width - 2) / 2;
-	while (tmp--)
-		printf(" ");
-	printf("b");
-	tmp = (width - 1) / 2;
-	while (tmp--)
-		printf(" ");
-	printf("|\n");
-	line(width);
-}
 
 void		cell(int width, t_stack *stack_a, t_stack *stack_b)
 {
@@ -77,28 +51,29 @@ void		cell(int width, t_stack *stack_a, t_stack *stack_b)
 	tmp = (width - len_b - 3) / 2;
 	while (tmp--)
 		printf(" ");
-	printf(" |\n");		
+	printf(" |\n");
 }
 
-void		main_table(int width, int length, t_stack *stack_a, t_stack *stack_b)
+void		main_table(int width, int length, t_stack *stack_a,
+t_stack *stack_b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
 
+	tmp_a = NULL;
+	tmp_b = NULL;
 	if (stack_a)
 		tmp_a = stack_a;
-	else
-		tmp_a = NULL;
 	if (stack_b)
 		tmp_b = stack_b;
-	else
-		tmp_b = NULL;
 	while (length)
 	{
 		cell(width, tmp_a, tmp_b);
-		if (!tmp_a || tmp_a->next->number == stack_a->number || len_stack(stack_a) == 1)
+		if (!tmp_a || tmp_a->next->number == stack_a->number
+		|| len_stack(stack_a) == 1)
 			tmp_a = NULL;
-		if (!tmp_b || tmp_b->next->number == stack_b->number || len_stack(stack_b) == 1)
+		if (!tmp_b || tmp_b->next->number == stack_b->number
+		|| len_stack(stack_b) == 1)
 			tmp_b = NULL;
 		if (tmp_a)
 			tmp_a = tmp_a->next;
@@ -123,7 +98,8 @@ int			search_length(t_stack *stack_a, t_stack *stack_b)
 		return (len_b);
 }
 
-void		visual_stacks(t_stack **stack_a, t_stack **stack_b, int visual)
+void		visual_stacks(t_stack **stack_a, t_stack **stack_b,
+int visual)
 {
 	int		length;
 	int		width;
