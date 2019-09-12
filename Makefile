@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/12 20:25:41 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/12 21:11:48 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_CHECKER_NAME = checker.c \
 				what_operation.c \
 				checker_algorythm.c \
 				visual.c \
+				visual_2.c \
 				max_min.c \
 				new_av.c
 OBJ_CHECKER_NAME = $(SRC_CHECKER_NAME:.c=.o);

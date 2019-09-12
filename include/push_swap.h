@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 20:24:57 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:09:29 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,18 @@ t_stack				*fill_stack(t_stack **stack_a, char **av, int ac);
 
 /* visual.c */
 void				visual_stacks(t_stack **stack_a, t_stack **stack_b, int visual);
+int					search_length(t_stack *stack_a, t_stack *stack_b);
+void				main_table(int width, int length, t_stack *stack_a, t_stack *stack_b);
+void				cell(int width, t_stack *stack_a, t_stack *stack_b);
+void				head_table(int width);
 int					len_stack(t_stack *stack);
+
+/* visual_2.c */
+int					len_stack(t_stack *stack);
+void				line(int max_len);
+int					count_numbers_in_n(int number);
+int					max_of_two(int a, int b);
+int					search_width(t_stack *stack_a, t_stack *stack_b);
 
 /* back_to_the_a.c */
 void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
