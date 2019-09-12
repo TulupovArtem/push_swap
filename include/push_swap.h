@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 15:10:24 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 20:24:57 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void				back_to_the_push_swap(long long *n, t_stack **stack_a, t_stack **stack_b
 void				count_sort_not_three(t_stack **stack_a, t_stack **stack_b, int arg);
 
 /* algorythm_2.c */
-void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
 void				moving_numbers(t_stack **stack_a, t_stack **stack_b, int arg, int count_sort);
 void				sort_stack_a(t_stack **stack_a, int arg);
 void				final_rotate(t_stack **stack_a);
@@ -117,5 +116,8 @@ t_stack				*fill_stack(t_stack **stack_a, char **av, int ac);
 /* visual.c */
 void				visual_stacks(t_stack **stack_a, t_stack **stack_b, int visual);
 int					len_stack(t_stack *stack);
+
+/* back_to_the_a.c */
+void				back_to_the_a(t_stack **stack_a, t_stack **stack_b, t_count_op *oper, int number);
 
 #endif

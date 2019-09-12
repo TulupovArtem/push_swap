@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   visual.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 14:40:14 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:01:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			count_numbers_in_n(int number)
 	int count;
 
 	count = 0;
+	if (number < 0)
+		number *= -1;
 	while (number)
 	{
 		number = number / 10;
@@ -56,21 +58,40 @@ int			count_numbers_in_n(int number)
 	return (count);
 }
 
+int			max_of_two(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
 int			search_width(t_stack *stack_a, t_stack *stack_b)
 {
 	int		max_a;
+	int		min_a;
 	int		max_b;
+	int		min_b;
 
 	max_a = 0;
+	min_a = 0;
 	max_b = 0;
+	min_b = 0;
 	if (stack_a)
+	{
 		max_a = count_numbers_in_n(max_num_in_stack(stack_a));
+		min_a = count_numbers_in_n(min_num_in_stack(stack_a));
+		if (min_num_in_stack(stack_a) < 0)
+			min_a++;
+	}
 	if (stack_b)
+	{
 		max_b = count_numbers_in_n(max_num_in_stack(stack_b));
-	if (max_a > max_b)
-		return (max_a);
-	else
-		return (max_b);
+		min_b = count_numbers_in_n(min_num_in_stack(stack_b));
+		if (min_num_in_stack(stack_b) < 0)
+			min_b++;
+	}
+	return (max_of_two(max_of_two(max_a, min_a), max_of_two(max_b, min_b)));
 }
 
 int			search_length(t_stack *stack_a, t_stack *stack_b)
@@ -92,25 +113,25 @@ void		head_table(int width)
 {
 	int tmp;
 
-	tmp = (width / 2) - 2;
+	tmp = (width - 2) / 2;
 	printf("\n");
 	line(width);
-	printf("| ");
+	printf("|");
 	while (tmp--)
 		printf(" ");
 	printf("a");
-	tmp = width / 2 - 1;
+	tmp = (width - 1) / 2;
 	while (tmp--)
 		printf(" ");
-	printf(" | ");
-	tmp = (width / 2) - 2;
+	printf("|");
+	tmp = (width - 2) / 2;
 	while (tmp--)
 		printf(" ");
 	printf("b");
-	tmp = width / 2 - 1;
+	tmp = (width - 1) / 2;
 	while (tmp--)
 		printf(" ");
-	printf(" |\n");
+	printf("|\n");
 	line(width);
 }
 
@@ -124,9 +145,17 @@ void		cell(int width, t_stack *stack_a, t_stack *stack_b)
 	len_b = 0;
 	tmp = 0;
 	if (stack_a)
+	{
 		len_a = count_numbers_in_n(stack_a->number);
+		if (stack_a->number < 0)
+			len_a++;
+	}
 	if (stack_b)
+	{
 		len_b = count_numbers_in_n(stack_b->number);
+		if (stack_b->number < 0)
+			len_b++;
+	}
 	printf("| ");
 	tmp = (width - len_a - 3) / 2;
 	while (tmp--)

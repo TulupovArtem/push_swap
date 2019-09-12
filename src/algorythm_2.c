@@ -6,35 +6,11 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 17:20:22 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/10 20:08:42 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 20:25:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	back_to_the_a(t_stack **stack_a, t_stack **stack_b,
-t_count_op *oper, int number)
-{
-	t_count_op *tmp;
-
-	tmp = oper;
-	while (number != tmp->number)
-		tmp = tmp->next;
-	if (tmp->rev_rot_b == 1)
-		while (tmp->op_b--)
-			reverse_rotate(stack_b, 2);
-	else
-		while (tmp->op_b--)
-			rotate(stack_b, 2);
-	if (tmp->rev_rot_a == 1)
-		while (tmp->op_a--)
-			reverse_rotate(stack_a, 1);
-	else
-		while (tmp->op_a--)
-			rotate(stack_a, 1);
-	push_a(stack_a, stack_b, 1);
-	free_list_op(&oper);
-}
 
 void	moving_numbers(t_stack **stack_a, t_stack **stack_b,
 int arg, int count_sort)
