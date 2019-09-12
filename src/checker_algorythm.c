@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 15:24:47 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:23:19 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ static int		gnl_plus_input(t_stack **stack_a, t_stack **stack_b, char *line)
 		if (rotate_or_reverse_rotate(stack_a, stack_b, line) == 0)
 			return (0);
 	}
-	else
-		return (0);
 	return (1);
 }
 
@@ -84,6 +82,8 @@ void			input(t_stack **stack_a, t_stack **stack_b, int visual)
 			ft_putendl("Error");
 			return ;
 		}
+		else if (*line == '\0')
+			break ;
 		visual_stacks(stack_a, stack_b, visual);
 	}
 	sort_or_not_sort(*stack_a, *stack_b, visual);
