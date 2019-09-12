@@ -6,53 +6,11 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 21:21:35 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 21:47:07 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void		cell(int width, t_stack *stack_a, t_stack *stack_b)
-{
-	int tmp;
-	int len_a;
-	int len_b;
-
-	len_a = 0;
-	len_b = 0;
-	tmp = 0;
-	if (stack_a)
-	{
-		len_a = count_numbers_in_n(stack_a->number);
-		if (stack_a->number < 0)
-			len_a++;
-	}
-	if (stack_b)
-	{
-		len_b = count_numbers_in_n(stack_b->number);
-		if (stack_b->number < 0)
-			len_b++;
-	}
-	printf("| ");
-	tmp = (width - len_a - 3) / 2;
-	while (tmp--)
-		printf(" ");
-	if (stack_a)
-		printf("%lld", stack_a->number);
-	tmp = (width - len_a - 2) / 2;
-	while (tmp--)
-		printf(" ");
-	printf(" | ");
-	tmp = (width - len_b - 2) / 2;
-	while (tmp--)
-		printf(" ");
-	if (stack_b)
-		printf("%lld", stack_b->number);
-	tmp = (width - len_b - 3) / 2;
-	while (tmp--)
-		printf(" ");
-	printf(" |\n");
-}
 
 void		main_table(int width, int length, t_stack *stack_a,
 t_stack *stack_b)
