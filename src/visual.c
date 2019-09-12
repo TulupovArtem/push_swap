@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 14:13:49 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 14:40:14 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,24 @@ void		head_table(int width)
 	int tmp;
 
 	tmp = (width / 2) - 2;
+	printf("\n");
 	line(width);
-	printf("|");
+	printf("| ");
 	while (tmp--)
 		printf(" ");
 	printf("a");
-	tmp = width / 2;
+	tmp = width / 2 - 1;
 	while (tmp--)
 		printf(" ");
-	printf("|");
+	printf(" | ");
 	tmp = (width / 2) - 2;
 	while (tmp--)
 		printf(" ");
 	printf("b");
-	tmp = width / 2;
+	tmp = width / 2 - 1;
 	while (tmp--)
 		printf(" ");
-	printf("|\n");
+	printf(" |\n");
 	line(width);
 }
 

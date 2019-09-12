@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 22:33:26 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/12 15:10:24 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void				add_num_in_stack(long long number, t_stack *stack);
 t_stack				*init_stack(long long number);
 
 /* what_operation.c */
-void				what_reverse_rotate(char **line, t_stack **stack_a, t_stack **stack_b);
-void				what_rotate(char **line, t_stack **stack_a, t_stack **stack_b);
-void				what_push(char **line, t_stack **stack_a, t_stack **stack_b);
-void				what_swap(char **line, t_stack **stack_a, t_stack **stack_b);
+int				what_reverse_rotate(char **line, t_stack **stack_a, t_stack **stack_b);
+int				what_rotate(char **line, t_stack **stack_a, t_stack **stack_b);
+int				what_push(char **line, t_stack **stack_a, t_stack **stack_b);
+int				what_swap(char **line, t_stack **stack_a, t_stack **stack_b);
 
 /* swap.c */
 void				swap(t_stack **stack, int print);
