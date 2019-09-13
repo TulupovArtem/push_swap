@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramory-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 16:03:52 by idunaver          #+#    #+#             */
-/*   Updated: 2019/06/22 16:56:51 by ramory-l         ###   ########.fr       */
+/*   Updated: 2019/09/13 19:42:17 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include "get_next_line.h"
+# include "libft.h"
 # include <stdarg.h>
 # include <float.h>
 # include <stdio.h>

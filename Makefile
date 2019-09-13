@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
+#    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/13 16:12:53 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 20:00:48 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@
 
 OBJDIR = obj
 SRCDIR = src
-LIBDIR = ft_printf
+LIBDIR = libft
 HEADER = -I ./include
-HEADER_LIBFT = -I ./ft_printf/include -I ./ft_printf/libft/include
+HEADER_LIBFT = -I ./libft/include -I ./libft/src/ft_printf/include
 FLAGS = -Wall -Wextra -Werror -g
 
 CHECKER = checker
@@ -61,21 +61,21 @@ OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
 OBJ_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(OBJ_PUSH_SWAP_NAME))
 
-all: $(CHECKER) $(PUSH_SWAP) $(LIBA)
+all: libft $(CHECKER) $(PUSH_SWAP)
 
 $(CHECKER): $(OBJ_CHECKER)
-	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
+	@gcc $(FLAGS) $^ -o $@ $(HEADER_LIBFT) $(HEADER) -L libft -lft
 
 $(PUSH_SWAP): $(OBJ_PUSH_SWAP)
-	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
-
-$(LIBA):
-	@make -C $(LIBDIR)
+	@gcc $(FLAGS) $^ -o $@ -Llibft -lft
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@gcc $(FLAGS) $(HEADER_LIBFT) $(HEADER) -o $@ -c $<
-	
+
+libft:
+	@make -C $(LIBDIR)	
+
 clean:
 	@make clean -C $(LIBDIR)
 	@rm -Rf $(OBJDIR)

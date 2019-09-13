@@ -3,27 +3,25 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
+#    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/05 14:34:56 by ramory-l          #+#    #+#              #
-#    Updated: 2019/09/13 15:28:43 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 19:15:15 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
-
-EXE = test
+NAME = libft.a
 
 SRC_SEARCH = src/*.c \
-			 src/support/*.c \
-			 libft/src/*.c \
-			 src/double/*.c
+			 src/ft_printf/src/*.c \
+			 src/ft_printf/src/support/*.c \
+			 src/ft_printf/src/double/*.c \
 
 SRC = $(wildcard $(SRC_SEARCH))
 
 OBJ = $(SRC:.c=.o)
 
-HEADERS = -I include -I libft/include
+HEADERS = -I include -I src/ft_printf/include
 
 IMFLAGS = -Wall -Wextra -Werror
 

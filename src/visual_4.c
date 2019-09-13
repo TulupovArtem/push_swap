@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 21:46:42 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 21:56:05 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 19:58:53 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	cell_one(int width, t_stack *stack_a, int len_a)
 	while (tmp--)
 		printf(" ");
 	if (stack_a)
-		printf("%lld", stack_a->number);
+		printf("\033[32mfff\033[m%lld", stack_a->number);
 	tmp = (width - len_a - 2) / 2;
 	while (tmp--)
 		printf(" ");

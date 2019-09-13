@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 13:47:21 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 14:02:05 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 19:55:06 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	input_with_visual_color(t_stack **stack_a, t_stack **stack_b, char **
 	len_arr -= 2;
 	if (!(*stack_a = fill_stack(stack_a, new_av + 2, len_arr)))
 			return (0);
-	input(stack_a, stack_b, 0);
+	input(stack_a, stack_b, 2);
 	return (1);
 }
 
