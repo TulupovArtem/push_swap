@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/13 20:00:48 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 20:34:34 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ SRC_CHECKER_NAME = checker.c \
 				visual_2.c \
 				visual_3.c \
 				visual_4.c \
+				visual_5.c \
+				visual_6.c \
 				max_min.c \
 				checker_args.c \
 				new_av.c

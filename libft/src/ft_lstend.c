@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_lstend.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:48:41 by idunaver         ###   ########.fr       */
+/*   Created: 2018/12/19 20:56:33 by idunaver          #+#    #+#             */
+/*   Updated: 2018/12/20 16:04:24 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int			main(int ac, char **av)
+t_list	*ft_lstend(t_list *start, t_list *new)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
-
-	stack_b = NULL;
-	stack_a = NULL;
-	if (ac == 1)
-		return (0);
-	else
-		checker(av, &stack_a, &stack_b);
-	return (0);
+	if (!start || !new)
+		return (NULL);
+	while (start->next)
+		start = start->next;
+	start->next = new;
+	if (!start->next)
+		return (NULL);
+	return (start->next);
 }

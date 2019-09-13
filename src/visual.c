@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:49:27 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 19:55:53 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 20:33:05 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int visual)
 		width = search_width(*stack_a, *stack_b) + 3;
 		length = search_length(*stack_a, *stack_b);
 		head_table(width);
-		main_table(width, length, *stack_a, *stack_b);
+		main_table_color(width, length, *stack_a, *stack_b);
 		line(width);
 	}
 }

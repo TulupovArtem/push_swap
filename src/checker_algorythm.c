@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 19:56:16 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 20:22:38 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,14 @@ void			input(t_stack **stack_a, t_stack **stack_b, int visual)
 
 	while (get_next_line(0, &line))
 	{
-		if (gnl_plus_input(stack_a, stack_b, line) == 0)
+		if (*line == '\0')
+			break ;
+		else if (gnl_plus_input(stack_a, stack_b, line) == 0)
 		{
 			ft_putendl("Error");
 			return ;
 		}
-		else if (*line == '\0')
-			break ;
-		if (visual == 1)
-			visual_stacks(stack_a, stack_b, visual);
+		visual_stacks(stack_a, stack_b, visual);
 	}
 	sort_or_not_sort(*stack_a, *stack_b, visual);
 }

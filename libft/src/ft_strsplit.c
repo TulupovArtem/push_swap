@@ -3,68 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramory-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/25 17:30:43 by ramory-l          #+#    #+#             */
-/*   Updated: 2018/11/27 18:58:23 by ramory-l         ###   ########.fr       */
+/*   Created: 2018/12/13 15:31:22 by idunaver          #+#    #+#             */
+/*   Updated: 2018/12/20 16:57:12 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_issym(char c, char sym)
+static	char	**ft_free(size_t j, size_t i, char **split)
 {
-	return (c == sym);
+	while (j != i)
+	{
+		ft_memdel((void**)split[j]);
+		j++;
+	}
+	free(split);
+	split = NULL;
+	return (split);
 }
 
-static	int		ft_countwords(const char *str, char c)
+static	size_t	ft_letters(char *s, char c)
 {
-	int	word;
-	int	counter;
+	size_t	l;
 
-	word = 0;
-	counter = 0;
-	while (*str)
+	l = 0;
+	while (*s != c && *s != '\0')
 	{
-		if (!ft_issym(*str, c))
-		{
-			if (word == 0)
-			{
-				word = 1;
-				counter++;
-			}
-		}
-		else
-			word = 0;
-		str++;
+		l++;
+		s++;
 	}
-	return (counter);
+	return (l);
+}
+
+static	size_t	ft_words(char *h, char c)
+{
+	size_t	i;
+
+	i = 1;
+	while (*h == c)
+		h++;
+	while (*h != c && *h != '\0')
+	{
+		while (*h != c && *h != '\0')
+			h++;
+		i++;
+		while (*h == c && *h != '\0')
+			h++;
+	}
+	return (i);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		arr[3];
-	char	**str;
+	char	**split;
+	size_t	i;
+	size_t	j;
 
-	ft_memset(arr, 0, sizeof(arr));
-	if (!s ||
-		!(str = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1))))
+	j = 0;
+	if (!s)
 		return (NULL);
-	while (s[arr[0]])
+	i = ft_words((char*)s, c);
+	if (!(split = (char **)malloc((i + 1) * sizeof(char *))))
+		return (NULL);
+	while (j != i - 1)
 	{
-		while (!ft_issym(s[arr[0] + arr[1]], c) && s[arr[0] + arr[1]])
-			arr[1]++;
-		if (arr[0] < arr[0] + arr[1])
-		{
-			str[arr[2]] = ft_strsub(s, arr[0], arr[1]);
-			if (str[arr[2]] == NULL)
-				return (NULL);
-			arr[2]++;
-			arr[0] = arr[0] + arr[1];
-			arr[1] = 0;
-		}
-		arr[0]++;
+		while (*s == c)
+			s++;
+		if ((split[j] = ft_strsub(s, 0, ft_letters((char *)s, c))) == NULL)
+			return (ft_free(j, i, split));
+		j++;
+		while (*s != c && *s != '\0')
+			s++;
 	}
-	str[ft_countwords(s, c)] = NULL;
-	return (str);
+	split[j] = NULL;
+	return (split);
 }

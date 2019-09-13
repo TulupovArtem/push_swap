@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   visual_2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 20:32:02 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 11:39:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 20:38:15 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void		line(int max_len)
 
 	tmp_max_len = max_len;
 	while (tmp_max_len--)
-		printf("-");
-	printf(" ");
+		ft_printf("-");
+	ft_printf(" ");
 	tmp_max_len = max_len;
 	while (tmp_max_len--)
-		printf("-");
-	printf("\n");
+		ft_printf("-");
+	ft_printf("\n");
 }
 
 int			count_numbers_in_n(int number)

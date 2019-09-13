@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:48:41 by idunaver         ###   ########.fr       */
+/*   Created: 2018/12/20 16:25:06 by idunaver          #+#    #+#             */
+/*   Updated: 2018/12/20 16:29:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int			main(int ac, char **av)
+int	ft_islower(int c)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
-
-	stack_b = NULL;
-	stack_a = NULL;
-	if (ac == 1)
-		return (0);
-	else
-		checker(av, &stack_a, &stack_b);
+	if (c >= 97 && c <= 122)
+		return (1);
 	return (0);
 }

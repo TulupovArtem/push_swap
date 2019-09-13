@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   visual_4.c                                         :+:      :+:    :+:   */
+/*   visual_6.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 21:46:42 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:37:57 by idunaver         ###   ########.fr       */
+/*   Created: 2019/09/13 20:33:51 by idunaver          #+#    #+#             */
+/*   Updated: 2019/09/13 20:46:08 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	cell_one(int width, t_stack *stack_a, int len_a)
 	while (tmp--)
 		ft_printf(" ");
 	if (stack_a)
-		ft_printf("%lld", stack_a->number);
+		ft_printf("\033[31m%lld\033[m", stack_a->number);
 	tmp = (width - len_a - 2) / 2;
 	while (tmp--)
 		ft_printf(" ");
@@ -53,14 +53,14 @@ static void	cell_two(int width, t_stack *stack_b, int len_b)
 	while (tmp--)
 		ft_printf(" ");
 	if (stack_b)
-		ft_printf("%lld", stack_b->number);
+		ft_printf("\033[32m%lld\033[m", stack_b->number);
 	tmp = (width - len_b - 3) / 2;
 	while (tmp--)
 		ft_printf(" ");
 	ft_printf(" |\n");
 }
 
-void		cell(int width, t_stack *stack_a, t_stack *stack_b)
+void		cell_color(int width, t_stack *stack_a, t_stack *stack_b)
 {
 	int tmp;
 	int len_a;

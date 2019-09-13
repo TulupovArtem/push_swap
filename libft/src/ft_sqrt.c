@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 15:03:13 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:48:41 by idunaver         ###   ########.fr       */
+/*   Created: 2018/11/20 14:32:31 by idunaver          #+#    #+#             */
+/*   Updated: 2018/12/14 20:14:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int			main(int ac, char **av)
+int		ft_sqrt(int nb)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
+	int i;
 
-	stack_b = NULL;
-	stack_a = NULL;
-	if (ac == 1)
-		return (0);
+	i = 0;
+	if (nb > 1)
+	{
+		while (i * i != nb)
+		{
+			i++;
+			if (i == nb)
+				return (0);
+		}
+		return (i);
+	}
 	else
-		checker(av, &stack_a, &stack_b);
-	return (0);
+		return (0);
 }
