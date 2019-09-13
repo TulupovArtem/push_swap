@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 21:56:10 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 10:41:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int			check_number(char **number, int ac)
 	while (i < ac - 1)
 	{
 		if (ft_atoll(number[i]) < 0 || (ft_strchr(number[i], '+')
-		&& ft_atoll(number[i]) > 0))
+		&& ft_strchr(number[i], '0')) || (ft_strchr(number[i], '-')
+		&& ft_strchr(number[i], '0')))
 			j++;
 		while (number[i][j])
 		{

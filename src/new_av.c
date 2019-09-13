@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_av.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/11 22:23:53 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:09:15 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,19 @@ int		len_double_arr(char **arr)
 	return (count);
 }
 
+int		check_double_overloaded(char *number)
+{
+	if (ft_strlen(number) > 10)
+		return (0);
+	else
+		return (1);
+}
+
 t_stack	*fill_stack(t_stack **stack_a, char **av, int ac)
 {
 	if (check_number(av, ac) == 1 && !(ft_atoll(*av)
-	> INT_MAX) && !(ft_atoll(*av) < INT_MIN))
+	> INT_MAX) && !(ft_atoll(*av) < INT_MIN) &&
+	check_double_overloaded(*av) != 0)
 	{
 		ac--;
 		*stack_a = init_stack(ft_atoll(*av));
