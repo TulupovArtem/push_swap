@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/13 15:48:44 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 16:12:53 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,15 +61,16 @@ OBJ_PUSH_SWAP_NAME = $(SRC_PUSH_SWAP_NAME:.c=.o);
 SRC_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(SRC_PUSH_SWAP_NAME))
 OBJ_PUSH_SWAP = $(addprefix $(OBJDIR)/, $(OBJ_PUSH_SWAP_NAME))
 
-all: $(CHECKER) $(PUSH_SWAP)
+all: $(CHECKER) $(PUSH_SWAP) $(LIBA)
 
 $(CHECKER): $(OBJ_CHECKER)
-	@make -C $(LIBDIR)
 	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
 
 $(PUSH_SWAP): $(OBJ_PUSH_SWAP)
-	@make -C $(LIBDIR)
 	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
+
+$(LIBA):
+	@make -C $(LIBDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
@@ -82,10 +83,6 @@ clean:
 fclean: clean
 	@make fclean -C $(LIBDIR)
 	@rm -Rf $(CHECKER) $(PUSH_SWAP)
-
-re_checker: fclean checker
-
-re_push_swap: fclean push_swap
 
 re: fclean all
 
