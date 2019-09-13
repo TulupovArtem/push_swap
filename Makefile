@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
+#    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/12 21:49:43 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 13:49:59 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC_CHECKER_NAME = checker.c \
 				visual_3.c \
 				visual_4.c \
 				max_min.c \
+				checker_args.c \
 				new_av.c
 OBJ_CHECKER_NAME = $(SRC_CHECKER_NAME:.c=.o);
 SRC_CHECKER = $(addprefix $(OBJDIR)/, $(SRC_CHECKER_NAME))

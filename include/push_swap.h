@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 11:12:31 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 13:49:22 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,7 @@ void					cell(int width, t_stack *stack_a, t_stack *stack_b);
 void					back_to_the_a(t_stack **stack_a,
 t_stack **stack_b, t_count_op *oper, int number);
 void					head_table(int width);
+/* checker_args.c */
+void					checker(char **av, t_stack **stack_a, t_stack **stack_b);
 
 #endif
