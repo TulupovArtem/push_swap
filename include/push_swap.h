@@ -6,14 +6,14 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 13:49:22 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 15:13:54 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "ft_printf.h"
 # include <stdio.h>
 # include <limits.h>
 

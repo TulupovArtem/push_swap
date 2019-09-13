@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/13 13:49:59 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/13 15:48:44 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@
 
 OBJDIR = obj
 SRCDIR = src
-LIBDIR = libft
+LIBDIR = ft_printf
 HEADER = -I ./include
-HEADER_LIBFT = -I ./libft/include
+HEADER_LIBFT = -I ./ft_printf/include -I ./ft_printf/libft/include
 FLAGS = -Wall -Wextra -Werror -g
 
 CHECKER = checker
@@ -65,11 +65,11 @@ all: $(CHECKER) $(PUSH_SWAP)
 
 $(CHECKER): $(OBJ_CHECKER)
 	@make -C $(LIBDIR)
-	@gcc $(FLAGS) $^ -o $@ -Llibft -lft
+	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
 
 $(PUSH_SWAP): $(OBJ_PUSH_SWAP)
 	@make -C $(LIBDIR)
-	@gcc $(FLAGS) $^ -o $@ -Llibft -lft
+	@gcc $(FLAGS) $^ -o $@ -Lft_printf -lftprintf
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
