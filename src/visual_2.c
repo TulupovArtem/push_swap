@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   visual_2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 20:32:02 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 21:07:43 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:39:27 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			count_numbers_in_n(int number)
 	int count;
 
 	count = 0;
+	if (number == 0)
+		return (1);
 	if (number < 0)
 		number *= -1;
 	while (number)
