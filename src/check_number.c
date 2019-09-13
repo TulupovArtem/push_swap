@@ -6,11 +6,19 @@
 /*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 10:41:58 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:12:09 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		check_double_overloaded(char *number)
+{
+	if (ft_strlen(number) > 10)
+		return (0);
+	else
+		return (1);
+}
 
 static int	different_numbers(char **number, int count)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/12 22:02:19 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:12:31 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct			s_count_op
 
 /* check_number.c */
 int						check_number(char **number, int ac);
+int						check_double_overloaded(char *number);
 /* work_with_stack.c */
 void					free_stacks(t_stack *stack_a, t_stack *stack_b);
 void					del_first_elem_in_stack(t_stack **stack);
