@@ -6,11 +6,11 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/08 14:50:16 by idunaver          #+#    #+#              #
-#    Updated: 2019/09/13 20:34:34 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/15 21:06:18 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all libft clean fclean re checker pushswap
+.PHONY: all libft clean fclean re
 
 OBJDIR = obj
 SRCDIR = src
@@ -71,7 +71,7 @@ $(CHECKER): $(OBJ_CHECKER)
 $(PUSH_SWAP): $(OBJ_PUSH_SWAP)
 	@gcc $(FLAGS) $^ -o $@ -Llibft -lft
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c include/push_swap.h
 	@mkdir -p $(OBJDIR)
 	@gcc $(FLAGS) $(HEADER_LIBFT) $(HEADER) -o $@ -c $<
 
