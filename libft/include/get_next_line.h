@@ -6,12 +6,13 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 13:35:39 by ramory-l          #+#    #+#             */
-/*   Updated: 2019/09/13 20:50:55 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 19:26:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
 # define BUFF_SIZE 32
 # define MAX_FD 10240
 

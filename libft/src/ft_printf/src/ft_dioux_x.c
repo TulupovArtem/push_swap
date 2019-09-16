@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 14:00:36 by ramory-l          #+#    #+#             */
-/*   Updated: 2019/06/15 16:58:55 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:52:03 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void		ft_oux_x(va_list ap, t_printf *data, t_buffer *bf)
 }
 
 void			ft_dioux_x(va_list ap,
-t_cc *format, t_printf *data, t_buffer *bf)
+t_printf *data, t_buffer *bf)
 {
 	if (data->type == 'd' || data->type == 'i')
 		ft_di(ap, data, bf);

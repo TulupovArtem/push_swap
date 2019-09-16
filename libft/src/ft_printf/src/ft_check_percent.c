@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 14:00:20 by ramory-l          #+#    #+#             */
-/*   Updated: 2019/06/15 16:53:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:54:02 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ t_cc *format, t_printf *data, t_buffer *bf)
 	if (type_index == 0)
 		return ("");
 	ft_manage_flags(data);
-	ft_choose_print(ap, format, data, bf);
+	ft_choose_print(ap, data, bf);
 	return (format + type_index + 1);
 }

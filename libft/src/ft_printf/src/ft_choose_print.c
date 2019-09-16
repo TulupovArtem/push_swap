@@ -6,18 +6,18 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 14:00:29 by ramory-l          #+#    #+#             */
-/*   Updated: 2019/06/15 16:54:11 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:53:20 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_choose_print(va_list ap, t_cc *format, t_printf *data, t_buffer *bf)
+void	ft_choose_print(va_list ap, t_printf *data, t_buffer *bf)
 {
 	if (data->type == 'd' || data->type == 'i' ||
 		data->type == 'o' || data->type == 'u' ||
 		data->type == 'x' || data->type == 'X')
-		ft_dioux_x(ap, format, data, bf);
+		ft_dioux_x(ap, data, bf);
 	if (data->type == 'c')
 		ft_print_char(ap, data, bf);
 	if (data->type == 's')

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 19:42:14 by idunaver          #+#    #+#             */
-/*   Updated: 2019/06/20 20:41:55 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 16:33:29 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,10 @@ char		*ft_workwithmantis(t_longdouble longdouble)
 	char				*result;
 	t_workwithmantis	wwm;
 
+	result = NULL;
 	wwm.numofintbits = longdouble.exp - LDBL_MAX_EXP + 2;
 	bitspower.power = wwm.numofintbits;
-	doublechar = ft_nulldoubletochar(doublechar);
+	ft_nulldoubletochar(&doublechar);
 	arrayint = ft_findingintpower(longdouble, wwm.numofintbits, bitspower);
 	doublechar.inttochar = ft_numtochar(arrayint);
 	arrayint = ft_findingfractionpower(longdouble, wwm.numofintbits, bitspower);

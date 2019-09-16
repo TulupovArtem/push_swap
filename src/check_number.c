@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:48:27 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 17:28:02 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,26 @@ int			check_double_overloaded(char *number)
 		return (0);
 	else
 		return (1);
+}
+
+static int	different_numbers_helper(int i, int count_tmp, int j, int **tmp)
+{
+	int *n;
+
+	n = *tmp;
+	while (i < count_tmp)
+	{
+		if (j + 1 < count_tmp && n[i] != n[j + 1])
+			j++;
+		else if (j + 1 < count_tmp && n[i] == n[j + 1])
+		{
+			free(n);
+			return (0);
+		}
+		else
+			j = ++i;
+	}
+	return (1);
 }
 
 static int	different_numbers(char **number, int count)
@@ -36,15 +56,8 @@ static int	different_numbers(char **number, int count)
 		return (0);
 	while (count)
 		n[--count] = ft_atoll(*(tmp++));
-	while (i < count_tmp)
-	{
-		if (j + 1 < count_tmp && n[i] != n[j + 1])
-			j++;
-		else if (j + 1 < count_tmp && n[i] == n[j + 1])
-			return (0);
-		else
-			j = ++i;
-	}
+	if (different_numbers_helper(i, count_tmp, j, &n) == 0)
+		return (0);
 	free(n);
 	return (1);
 }

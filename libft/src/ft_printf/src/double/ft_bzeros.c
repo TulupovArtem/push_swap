@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 20:11:00 by idunaver          #+#    #+#             */
-/*   Updated: 2019/06/20 21:21:37 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 16:33:21 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ void			ft_freedoubletochar(t_doubletochar doublechar)
 	free(doublechar.fractiontochar);
 }
 
-t_doubletochar	ft_nulldoubletochar(t_doubletochar doublechar)
+void			ft_nulldoubletochar(t_doubletochar *doublechar)
 {
-	doublechar.inttochar = NULL;
-	doublechar.fractiontochar = NULL;
-	doublechar.nulls = NULL;
-	return (doublechar);
+	doublechar->inttochar = NULL;
+	doublechar->fractiontochar = NULL;
+	doublechar->nulls = NULL;
 }
 
 t_arrayint		ft_bzeroarrs(void)

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 16:03:52 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 19:42:17 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 16:34:07 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,9 @@ t_cc *format, t_printf *data, t_buffer *bf);
 int								ft_specifier_format(
 t_cc *format, t_printf *data);
 void							ft_choose_print(
-va_list ap, t_cc *format, t_printf *data, t_buffer *bf);
+va_list ap, t_printf *data, t_buffer *bf);
 void							ft_dioux_x(va_list ap,
-t_cc *format, t_printf *data, t_buffer *bf);
+t_printf *data, t_buffer *bf);
 void							ft_print_di(t_printf *data,
 t_buffer *bf);
 void							ft_print_oux_x(t_printf *data,
@@ -199,7 +199,7 @@ t_powerbits bitspower);
 void							ft_print_ptr(va_list ap, t_printf *data,
 t_buffer *bf);
 void							ft_freedoubletochar(t_doubletochar doublechar);
-t_doubletochar					ft_nulldoubletochar(t_doubletochar doublechar);
+void							ft_nulldoubletochar(t_doubletochar *doublechar);
 char							*ft_strdupandfree(t_workwithmantis wwm,
 char *result);
 char							*ft_doublecat(char *result,

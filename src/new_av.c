@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/13 20:07:39 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:32:06 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,16 @@ t_stack	*fill_stack(t_stack **stack_a, char **av, int ac)
 			else
 			{
 				ft_putendl("Error");
-				return (NULL);
+				free_double_arr(av);
+				exit (EXIT_FAILURE);
 			}
 		}
 		return (*stack_a);
 	}
 	else
 		ft_putendl("Error");
-	return (NULL);
+	free_double_arr(av);
+	exit (EXIT_FAILURE);
 }
 
 int		count_elems(char **av)
@@ -83,6 +85,8 @@ void	free_double_arr(char **double_arr)
 
 	len = 0;
 	tmp = double_arr;
+	if (double_arr == NULL)
+		exit (EXIT_FAILURE);
 	while (*tmp++)
 		len++;
 	len--;
@@ -107,7 +111,8 @@ char	**create_new_av(char **av)
 	i = 0;
 	tmp = NULL;
 	elems = count_elems(av);
-	new_av = (char **)malloc((elems + 1) * sizeof(char *));
+	if (!(new_av = (char **)malloc((elems + 1) * sizeof(char *))))
+		exit (EXIT_FAILURE);
 	while (i != elems)
 	{
 		elem = ft_strsplit(*(++av), ' ');

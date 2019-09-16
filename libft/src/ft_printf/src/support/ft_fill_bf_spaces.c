@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_bf_spaces.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramory-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 15:15:29 by ramory-l          #+#    #+#             */
-/*   Updated: 2019/06/15 18:44:17 by ramory-l         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:55:58 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_fill_spaces_di(t_printf *data, t_buffer *bf)
 
 void	ft_fill_spaces_oux(t_printf *data, t_buffer *bf)
 {
-	int	spaces;
+	long long	spaces;
 
 	spaces = data->width - data->len + bf->s;
 	if (data->accuracy > data->len && data->type != 's')
