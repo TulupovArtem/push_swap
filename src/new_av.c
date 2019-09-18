@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/16 15:32:06 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/18 21:38:02 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		len_double_arr(char **arr)
 	char	**tmp;
 
 	tmp = arr;
-	count = 1;
+	count = 0;
 	while (*tmp++)
 		count++;
 	return (count);
