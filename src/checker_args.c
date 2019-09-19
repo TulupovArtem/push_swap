@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 13:47:21 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/18 21:51:43 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/19 17:37:37 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,14 @@ void		checker(char **av, t_stack **stack_a, t_stack **stack_b)
 	len_arr = 0;
 	new_av = create_new_av(av);
 	len_arr = len_double_arr(new_av);
-	if ((len_arr != 1 && ft_strcmp(*new_av, "-v") == 0) ||
-	(len_arr >= 2 && ft_strcmp(*(new_av + 1), "-c") == 0))
+	if ((len_arr == 2 && ft_strcmp(*new_av, "-v") == 0) ||
+	(len_arr == 3 && ft_strcmp(*(new_av + 1), "-c") == 0))
+		ft_putendl("Error");
+	else if (len_arr != 1 && ft_strcmp(*new_av, "-v") == 0)
 	{
 		if (input_with_param(stack_a, stack_b, new_av, len_arr) == 0)
 			return ;
-	}
-	else if ((len_arr == 1 && ft_strcmp(*new_av, "-v") == 0) ||
-	(len_arr == 2 && ft_strcmp(*(new_av + 1), "-c") == 0))
-		ft_putendl("Error");
+	}	
 	else
 	{
 		if (input_without_visual(stack_a, stack_b, new_av, len_arr) == 0)

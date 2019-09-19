@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/18 21:38:02 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:58:30 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		len_double_arr(char **arr)
 	char	**tmp;
 
 	tmp = arr;
-	count = 0;
+	count = 1;
 	while (*tmp++)
 		count++;
 	return (count);
@@ -26,6 +26,9 @@ int		len_double_arr(char **arr)
 
 t_stack	*fill_stack(t_stack **stack_a, char **av, int ac)
 {
+	char **tmp;
+
+	tmp = av;
 	if (check_number(av, ac) == 1 && !(ft_atoll(*av)
 	> INT_MAX) && !(ft_atoll(*av) < INT_MIN) &&
 	check_double_overloaded(*av) == 1)
@@ -34,21 +37,19 @@ t_stack	*fill_stack(t_stack **stack_a, char **av, int ac)
 		*stack_a = init_stack(ft_atoll(*av));
 		while (--ac != -1 && *(++av))
 		{
-			if (!(ft_atoll(*av) > INT_MAX) && !(ft_atoll(*av) < INT_MIN))
+			if (!(ft_atoll(*av) > INT_MAX) && !(ft_atoll(*av) < INT_MIN) &&
+			check_double_overloaded(*av) == 1)
 				add_num_in_stack(ft_atoll(*av), *stack_a);
 			else
 			{
-				ft_putendl("Error");
-				free_double_arr(av);
-				exit (EXIT_FAILURE);
+				fill_stack_error(stack_a, tmp);
+				return (NULL);
 			}
 		}
 		return (*stack_a);
 	}
-	else
-		ft_putendl("Error");
-	free_double_arr(av);
-	exit (EXIT_FAILURE);
+	fill_stack_error(stack_a, tmp);
+	return (NULL);
 }
 
 int		count_elems(char **av)
@@ -86,7 +87,7 @@ void	free_double_arr(char **double_arr)
 	len = 0;
 	tmp = double_arr;
 	if (double_arr == NULL)
-		exit (EXIT_FAILURE);
+		return ;
 	while (*tmp++)
 		len++;
 	len--;

@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 14:38:25 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/18 19:49:45 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:37:06 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ static void		sort_or_not_sort(t_stack *stack_a, t_stack *stack_b, int visual)
 	t_stack	*tmp;
 
 	tmp = stack_a;
-	visual_stacks(&stack_a, &stack_b, visual);
+	if (visual != 0)
+	{
+		ft_putstr("Result:");
+		visual_stacks(&stack_a, &stack_b, visual);
+	}
 	if (stack_b)
 	{
 		ft_putendl("KO");
@@ -85,7 +89,7 @@ void			input(t_stack **stack_a, t_stack **stack_b, int visual)
 		{
 			ft_putendl("Error");
 			ft_strdel(&line);
-			exit (EXIT_FAILURE) ;
+			return ;
 		}
 		visual_stacks(stack_a, stack_b, visual);
 		ft_strdel(&line);

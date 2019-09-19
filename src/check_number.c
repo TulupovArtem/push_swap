@@ -6,11 +6,18 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/16 17:28:02 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:49:15 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void		fill_stack_error(t_stack **stack_a, char **av)
+{
+	ft_putendl("Error");
+	free_stacks(*stack_a, NULL);
+	free_double_arr(av);
+}
 
 int			check_double_overloaded(char *number)
 {
