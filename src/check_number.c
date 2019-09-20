@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:20:36 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/19 19:49:15 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:47:34 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ int			check_number(char **number, int ac)
 	{
 		if (ft_atoll(number[i]) < 0 || (ft_strchr(number[i], '+')
 		&& ft_strchr(number[i], '0')) || (ft_strchr(number[i], '-')
-		&& ft_strchr(number[i], '0')))
+		&& ft_strchr(number[i], '0')) ||
+		(ft_atoll(number[i]) > 0 && ft_strchr(number[i], '+')))
 			j++;
 		while (number[i][j])
 		{

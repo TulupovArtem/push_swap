@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/19 19:58:30 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:48:44 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	**create_new_av(char **av)
 	tmp = NULL;
 	elems = count_elems(av);
 	if (!(new_av = (char **)malloc((elems + 1) * sizeof(char *))))
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	while (i != elems)
 	{
 		elem = ft_strsplit(*(++av), ' ');

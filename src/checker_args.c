@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 13:47:21 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/19 17:37:37 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:48:55 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		checker(char **av, t_stack **stack_a, t_stack **stack_b)
 	{
 		if (input_with_param(stack_a, stack_b, new_av, len_arr) == 0)
 			return ;
-	}	
+	}
 	else
 	{
 		if (input_without_visual(stack_a, stack_b, new_av, len_arr) == 0)

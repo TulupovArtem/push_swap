@@ -6,7 +6,7 @@
 #    By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/05 14:34:56 by ramory-l          #+#    #+#              #
-#    Updated: 2019/09/18 21:34:17 by idunaver         ###   ########.fr        #
+#    Updated: 2019/09/20 18:02:53 by idunaver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = $(SRC:.c=.o)
 
 HEADERS = -I include -I src/ft_printf/include
 
-IMFLAGS = -Wall -Wextra -Werror -g
+IMFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
