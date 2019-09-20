@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:24:59 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/20 17:48:44 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:40:20 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,32 @@ int		len_double_arr(char **arr)
 	return (count);
 }
 
-t_stack	*fill_stack(t_stack **stack_a, char **av, int ac)
+t_stack	*fill_stack(t_stack **stack_a, char **av, int ac, int visual)
 {
 	char **tmp;
 
 	tmp = av;
-	if (check_number(av, ac) == 1 && !(ft_atoll(*av)
-	> INT_MAX) && !(ft_atoll(*av) < INT_MIN) &&
-	check_double_overloaded(*av) == 1)
+	tmp += visual;
+	if (check_number(tmp, ac) == 1 && !(ft_atoll(*tmp)
+	> INT_MAX) && !(ft_atoll(*tmp) < INT_MIN) &&
+	check_double_overloaded(*tmp) == 1)
 	{
 		ac--;
-		*stack_a = init_stack(ft_atoll(*av));
-		while (--ac != -1 && *(++av))
+		*stack_a = init_stack(ft_atoll(*tmp));
+		while (--ac != -1 && *(++tmp))
 		{
-			if (!(ft_atoll(*av) > INT_MAX) && !(ft_atoll(*av) < INT_MIN) &&
-			check_double_overloaded(*av) == 1)
-				add_num_in_stack(ft_atoll(*av), *stack_a);
+			if (!(ft_atoll(*tmp) > INT_MAX) && !(ft_atoll(*tmp) < INT_MIN) &&
+			check_double_overloaded(*tmp) == 1)
+				add_num_in_stack(ft_atoll(*tmp), *stack_a);
 			else
 			{
-				fill_stack_error(stack_a, tmp);
+				fill_stack_error(stack_a, av);
 				return (NULL);
 			}
 		}
 		return (*stack_a);
 	}
-	fill_stack_error(stack_a, tmp);
+	fill_stack_error(stack_a, av);
 	return (NULL);
 }
 

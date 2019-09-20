@@ -6,7 +6,7 @@
 /*   By: idunaver <idunaver@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 15:06:43 by idunaver          #+#    #+#             */
-/*   Updated: 2019/09/19 19:49:56 by idunaver         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:37:29 by idunaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int						len_double_arr(char **arr);
 int						count_elems(char **av);
 void					free_double_arr(char **double_arr);
 char					**create_new_av(char **av);
-t_stack					*fill_stack(t_stack **stack_a, char **av, int ac);
+t_stack					*fill_stack(t_stack **stack_a, char **av, int ac, int visual);
 void					visual_stacks(t_stack **stack_a,
 t_stack **stack_b, int visual);
 int						search_length(t_stack *stack_a, t_stack *stack_b);
